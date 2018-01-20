@@ -9,9 +9,23 @@
 namespace PrestationBundle\Controller;
 
 
+use PrestationBundle\Entity\Action;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
-class ActionControllerTest extends Controller
+class ActionController extends Controller
 {
+    public function newAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $action = new Action('test prestation service', 30);
+        /*
+        $em->persist($action);
+        $em->flush();
+        */
 
+        return $this->render('Prestation/Action/new.html.twig', ['text' => 'car wash']);
+
+
+    }
 }

@@ -1,6 +1,9 @@
 imports:
     - { resource: config_dev.yml }
 
+parameters:
+    database_name: pimp_my_car_test
+
 framework:
     test: ~
     session:

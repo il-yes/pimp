@@ -1,0 +1,3 @@
+prestation_action:
+    path:     /new
+    defaults: { _controller: PrestationBundle:Action:new }

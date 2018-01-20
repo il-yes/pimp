@@ -1,10 +1,14 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
 product:
     resource: "@ProductBundle/Resources/config/routing.yml"
     prefix:   /
 
 order:
     resource: "@OrderBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /order
 
 prestation:
     resource: "@PrestationBundle/Resources/config/routing.yml"
@@ -18,6 +22,4 @@ core:
     resource: "@CoreBundle/Resources/config/routing.yml"
     prefix:   /
 
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+

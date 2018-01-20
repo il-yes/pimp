@@ -35,6 +35,17 @@ class Action
      */
     private $price;
 
+    /**
+     * Action constructor.
+     * @param string $name
+     * @param float $price
+     */
+    public function __construct($name, $price)
+    {
+        $this->name = $name;
+        $this->price = $price;
+    }
+
 
     /**
      * Get id

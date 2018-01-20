@@ -1,3 +1,5 @@
-prestation_homepage:
-    path:     /
-    defaults: { _controller: PrestationBundle:Default:index }
+# ******************************** ACTION *********************************
+prestation_action:
+    resource: "@PrestationBundle/Resources/config/routing/action.yml"
+    prefix:   /prestations
+
