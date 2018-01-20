@@ -15,17 +15,24 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ActionController extends Controller
 {
-    public function newAction(Request $request)
+    public function indexAction()
     {
+        return $this->render('PrestationBundle/Action/index.html.twig');
+    }
+
+    public function newAction(Request $request, $data)
+    {
+
         $em = $this->getDoctrine()->getManager();
-        $action = new Action('test prestation service', 30);
-        /*
+        $action = new Action($data['name'], $data['category'], $data['price']);
+
         $em->persist($action);
         $em->flush();
-        */
 
-        return $this->render('Prestation/Action/new.html.twig', ['text' => 'car wash']);
+        $request->getSession()
+            ->getFlashBag()
+            ->add('success', sprintf('vous avez selectionnez %s, merci de votre confiance', $action->getName()));
 
-
+        return $this->redirectToRoute('prestation_action_index');
     }
 }

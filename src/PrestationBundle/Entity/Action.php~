@@ -44,15 +44,13 @@ class Action
 
     /**
      * Action constructor.
-     * @param $_name
-     * @param $_category
-     * @param $_price
+     * @param string $name
+     * @param float $price
      */
-    public function __construct($_name, $_category, $_price)
+    public function __construct($name, $price)
     {
-        $this->name = $_name;
-        $this->price = $_price;
-        $this->category = $_category;
+        $this->name = $name;
+        $this->price = $price;
     }
 
 
@@ -115,28 +113,5 @@ class Action
     }
 
 
-
-    /**
-     * Set category
-     *
-     * @param string $category
-     *
-     * @return Action
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return string
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
 }
+

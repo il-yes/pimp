@@ -6,9 +6,10 @@
  * Time: 13:27
  */
 
-namespace PrestationBundle\Tests\Controller;
+namespace Tests\Framework;
 
 
+use Throwable;
 use Doctrine\ORM\Tools\SchemaTool;
 use PHPUnit\Framework\TestCase;
 use PrestationBundle\Entity\Action;
@@ -22,7 +23,13 @@ class WebTestCase extends BaseTestCase
 
     protected $schemaTool;
 
-    private $em;
+    protected $em;
+
+    protected $crawler;
+
+    private $response;
+
+    private $responseContent;
 
     public function setUp()
     {
@@ -32,19 +39,19 @@ class WebTestCase extends BaseTestCase
         $this->container = $this->client->getContainer();
         $this->em = $this->container->get('doctrine.orm.default_entity_manager');
         /*
-        static $metadatas;
-        if(!isset($metadatas))
-        {
-            $metadatas = $this->em->getMetadataFactory()->getAllMetadata();
-        }
+            static $metadatas;
+            if(!isset($metadatas))
+            {
+                $metadatas = $this->em->getMetadataFactory()->getAllMetadata();
+            }
 
-        $this->schemaTool = new SchemaTool($this->em);
-        $this->schemaTool->dropDatabase();
+            $this->schemaTool = new SchemaTool($this->em);
+            $this->schemaTool->dropDatabase();
 
-        if (empty($metadatas))
-        {
-            $this->schemaTool->createSchema($metadatas);
-        }
+            if (empty($metadatas))
+            {
+                $this->schemaTool->createSchema($metadatas);
+            }
         */
         // Autre facon de gerer la bdd
         $this->em->beginTransaction();
@@ -53,24 +60,42 @@ class WebTestCase extends BaseTestCase
 
     }
 
-
-
-    /**
-     * - create a new action
-     * @test
-     */
-    public function new_action()
+    protected function visit($url)
     {
-        $action = new Action('car wash', 15);
-        $this->em->persist($action);
-        $this->em->flush();
+        $this->crawler = $this->client->request('GET', $url);
 
-        $crawler = $this->client->request('GET', '/prestations/new');
+        $this->response = $this->client->getResponse();
+        $this->responseContent = $this->response->getContent();
+        return $this;
+    }
 
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-        $this->assertContains('Creation', $this->client->getResponse()->getContent());
-        $this->assertEquals('car wash', $action->getName());
 
+    protected function seeText($text)
+    {
+        $this->assertContains($text, $this->responseContent);
+        return $this;
+    }
+
+    protected function assertResponseOk()
+    {
+        $this->assertEquals(200, $this->response->getStatusCode());
+        return $this;
+    }
+
+
+
+
+    protected function onNotSuccessfulTest(Throwable $t)
+    {
+        if ($this->crawler && $this->crawler->filter('.exception-message')->count() > 0)
+        {
+            $throwableClass = get_class($t);
+
+            $message =  $this->crawler->filter('.exception-message')->eq(0)->text();
+
+            throw new $throwableClass($t->getMessage() .' | '. $message);
+        }
+        throw $t;
 
     }
 

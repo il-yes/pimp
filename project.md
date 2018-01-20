@@ -49,5 +49,7 @@ Entity :
 - Action : 
     - name
     - price
+    - category (esthetic, maintenance, customizing)
+    
     
 
