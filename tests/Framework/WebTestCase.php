@@ -8,13 +8,13 @@
 
 namespace PrestationBundle\Tests\Controller;
 
-use Throwable;
+
 use Doctrine\ORM\Tools\SchemaTool;
 use PHPUnit\Framework\TestCase;
 use PrestationBundle\Entity\Action;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseTestCase;
 
-class ActionControllerTest extends WebTestCase
+class WebTestCase extends BaseTestCase
 {
     protected $client;
 
@@ -23,8 +23,6 @@ class ActionControllerTest extends WebTestCase
     protected $schemaTool;
 
     private $em;
-
-    private $crawler;
 
     public function setUp()
     {
@@ -67,7 +65,7 @@ class ActionControllerTest extends WebTestCase
         $this->em->persist($action);
         $this->em->flush();
 
-        $this->crawler = $this->client->request('GET', '/prestations/new');
+        $crawler = $this->client->request('GET', '/prestations/new');
 
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertContains('Creation', $this->client->getResponse()->getContent());
@@ -75,19 +73,6 @@ class ActionControllerTest extends WebTestCase
 
 
     }
-
-    protected function onNotSuccessfulTest(Throwable $t)
-    {
-        if ($this->crawler && $this->crawler->filter('.exception-message')->count() > 0)
-        {
-            $throwableClass = get_class($t);
-
-            throw new $throwableClass($t->getMessage() .' | '. $this->crawler->filter('.exception-message')->eq(0)->text());
-        }
-        throw $t;
-
-    }
-
 
     public function tearDown()
     {

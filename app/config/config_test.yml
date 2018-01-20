@@ -1,8 +1,11 @@
 imports:
     - { resource: config_dev.yml }
 
-parameters:
-    database_name: pimp_my_car_test
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        path: '%kernel.project_dir%/var/data/data.sqlite'
 
 framework:
     test: ~
