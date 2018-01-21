@@ -20,19 +20,22 @@ class ActionController extends Controller
         return $this->render('PrestationBundle/Action/index.html.twig');
     }
 
-    public function newAction(Request $request, $data)
+    public function newAction(Request $request)
     {
+        /*
+            $em = $this->getDoctrine()->getManager();
+            $action = new Action($data['name'], $data['category'], $data['price']);
 
-        $em = $this->getDoctrine()->getManager();
-        $action = new Action($data['name'], $data['category'], $data['price']);
+            $em->persist($action);
+            $em->flush();
 
-        $em->persist($action);
-        $em->flush();
+            $request->getSession()
+                ->getFlashBag()
+                ->add('success', sprintf('vous avez selectionnez %s, merci de votre confiance', $action->getName()));
 
-        $request->getSession()
-            ->getFlashBag()
-            ->add('success', sprintf('vous avez selectionnez %s, merci de votre confiance', $action->getName()));
+            return $this->redirectToRoute('prestation_action_index');
+        */
 
-        return $this->redirectToRoute('prestation_action_index');
+        return $this->render('Prestation/Action/new.html.twig', ['text' => 'Hello this is here to create a new acivity']);
     }
 }

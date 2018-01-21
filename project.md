@@ -1,5 +1,6 @@
 Project : PIMP MY CAR
-	(garage d'entretien de motos et d'automobiles) 	
+	plateforme d'ateliers mecanique multitech (motos, automobiles, car) 
+	Multitech mechanical workshop platform (motorcycles, cars, trucks)	
 
 - Event
 - prestation
@@ -9,6 +10,7 @@ Project : PIMP MY CAR
 - user
 - calendar
 - cart
+- workshop (atelier)
 
 1/ Event : 
 Un event est constitué d'un vehicule, d'une prestation, d'une date
@@ -17,7 +19,7 @@ Un event est constitué d'un vehicule, d'une prestation, d'une date
 Une prestation est constituée d'une action et d'une equipe
 
 3/ Vehicule : 
-Un Vehicule est constitué d'une voiture ou d'une moto
+Un Vehicule est constitué d'une voiture, d'une moto ou d'un car
 
 4/ Date : 
 Une date est constituée d'une année, d'un mois ,d'un jour, d'une heure
@@ -30,6 +32,9 @@ Un user est constitué d'un prestataire dans une equipe ou d'un client
 
 7/ Calendar
 Un calendar est constitué d'events
+
+8/ Workshop :
+Un atelier est constitué d'une activité et d'une capacité de contenance
 
 
 Bundle : 
@@ -46,10 +51,13 @@ Entity :
     - created_at
     - updated_at
     
-- Action : 
+- Action(activité) : 
     - name
     - price
     - category (esthetic, maintenance, customizing)
     
-    
-
+- Workshop :
+    - name
+    - activity
+    - isAvailable 
+    - capacity (small, classic, large)
