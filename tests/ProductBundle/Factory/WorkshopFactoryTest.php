@@ -9,6 +9,7 @@
 namespace ProductBundle\Tests\Factory;
 
 use PHPUnit\Framework\TestCase;
+use ProductBundle\Exception\WhatIsMyMotherFunckinName;
 use ProductBundle\Factory\WorkshopFactory;
 
 
@@ -89,9 +90,22 @@ class WorkshopFactoryTest extends TestCase
             ['oregon', 'car repair', self::LARGE, true],
             ['mars', 'washing', self::CLASSIC, $inUse],
             ['neptune', 'polish', self::LARGE, true],
+            ['', 'polish', self::LARGE, true],
         ];
     }
 
+    /**
+     * @test
+     */
+    public function canNotCreateAWorkshopWithoutAName()
+    {
+        $factory = new WorkshopFactory();
+        $this->expectException(WhatIsMyMotherFunckinName::class);
+        $workshop = $factory->createSmallWorkshop('', 'Painting', true);
 
+        $this->expectException(WhatIsMyMotherFunckinName::class);
+        $workshop = $factory->createSmallWorkshop(45, 'Painting', true);
+
+    }
 
 }

@@ -10,11 +10,16 @@ namespace ProductBundle\Factory;
 
 
 use ProductBundle\Entity\Workshop;
+use ProductBundle\Exception\WhatIsMyMotherFunckinName;
 
 class WorkshopFactory
 {
     private function createWorkshop($name, $activity, $capacity, $isAvailable = false)
     {
+        if (!$this->canAddAWorshop($name))
+        {
+            throw new WhatIsMyMotherFunckinName();
+        }
         return new Workshop($name, $activity, $capacity, $isAvailable, $isAvailable = false);
     }
 
@@ -75,5 +80,18 @@ class WorkshopFactory
             default :
                 return $this->createClassicWorkshop($name, $activity, $isAvailable);
         }
+    }
+
+    /**
+     * @param $name
+     * @return bool
+     */
+    public function canAddAWorshop($name)
+    {
+        if ($name != '' && is_string($name) )
+        {
+            return true;
+        }
+        return false;
     }
 }
