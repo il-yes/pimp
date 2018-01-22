@@ -52,6 +52,7 @@ Trait
 - DateLog
     - created_at
     - updated_at
+    - remove_at
 
 
 Entity 
