@@ -25,7 +25,7 @@ Un Vehicule est constitué d'une voiture, d'une moto ou d'un car
 Une date est constituée d'une année, d'un mois ,d'un jour, d'une heure
 
 5/ Document
-Un event est constitué de pieces justificatifs ou d'un bon de commande ou d'un rapport ou d'une facture 
+Un document est constitué de pieces justificatifs ou d'un bon de commande ou d'un rapport ou d'une facture 
 
 6/ User : 
 Un user est constitué d'un prestataire dans une equipe ou d'un client
