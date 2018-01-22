@@ -48,11 +48,16 @@ Bundle :
 
 
 Entity : 
-- Date
+- DateLog
     - created_at
     - updated_at
+
+- Date :
+    - startAt
+    - endsAt
+    - cancelAt
     
-- Action(activité) : 
+- Activité(action) : 
     - name
     - price
     - category (esthetic, maintenance, customizing)
