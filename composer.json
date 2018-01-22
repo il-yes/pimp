@@ -9,7 +9,8 @@
             "UserBundle\\": "src/UserBundle",
             "PrestationBundle\\": "src/PrestationBundle",
             "OrderBundle\\": "src/OrderBundle",
-            "ProductBundle\\": "src/ProductBundle"
+            "ProductBundle\\": "src/ProductBundle",
+            "EventBundle\\": "src/EventBundle"
         },
         "classmap": [
             "app/AppKernel.php",

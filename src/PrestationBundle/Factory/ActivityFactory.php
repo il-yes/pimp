@@ -9,9 +9,10 @@
 namespace PrestationBundle\Factory;
 
 
+use CoreBundle\Factory\FactoryBuilderInterface;
 use PrestationBundle\Entity\Activity;
 
-class ActivityFactory
+class ActivityFactory implements FactoryBuilderInterface
 {
     const ESTHETIC = 'esthetic';
     const MAINTENANCE = 'maintenance';
