@@ -40,6 +40,7 @@ Un atelier est constitué d'une activité et d'une capacité de contenance
 Bundle : 
 - CoreBundle
 - UserBundle
+_ EventBundle
 - PrestationBundle
 - ProductBundle
 - OrderBundle
