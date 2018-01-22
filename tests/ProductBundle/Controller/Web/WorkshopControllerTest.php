@@ -6,10 +6,9 @@
  * Time: 14:11
  */
 
-namespace ProductBundle\Tests\Controller;
+namespace ProductBundle\Tests\Controller\Web;
 
 
-use ProductBundle\Entity\Workshop;
 use Tests\Framework\WebTestCase;
 
 class WorkshopControllerTest extends WebTestCase

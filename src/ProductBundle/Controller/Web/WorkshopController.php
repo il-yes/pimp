@@ -6,7 +6,7 @@
  * Time: 14:28
  */
 
-namespace ProductBundle\Controller;
+namespace ProductBundle\Controller\Web;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

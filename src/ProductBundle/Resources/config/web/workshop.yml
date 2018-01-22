@@ -1,0 +1,3 @@
+web_product_workshop_new:
+    path:     /new
+    defaults: { _controller: ProductBundle:Web/Workshop:new }

@@ -1,9 +1,23 @@
-product_homepage:
+# .......................................................................... #
+# - WEB ***
+# .......................................................................... #
+
+# ******************************** WORKSHOP *********************************
+web_product_homepage:
     path:     /
     defaults: { _controller: ProductBundle:Default:index }
 
-# ******************************** WORKSHOP *********************************
-product_workshop:
-    resource: "@ProductBundle/Resources/config/routing/workshop.yml"
+web_product_workshop:
+    resource: "@ProductBundle/Resources/config/web/workshop.yml"
     prefix:   /workshops
 
+
+
+# .......................................................................... #
+# - API ***
+# .......................................................................... #
+
+# ******************************** WORKSHOP *********************************
+api_product_workshop:
+    resource: "@ProductBundle/Resources/config/api/workshop.yml"
+    prefix:   /api/workshops

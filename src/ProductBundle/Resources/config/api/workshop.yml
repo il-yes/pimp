@@ -1,0 +1,4 @@
+api_product_workshop_new:
+    path:     /
+    defaults: { _controller: ProductBundle:Api/Workshop:new }
+    methods: POST
