@@ -38,9 +38,9 @@ class DateLog
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="removeAt", type="datetime", nullable=true)
+     * @ORM\Column(name="removedAt", type="datetime", nullable=true)
      */
-    private $removeAt;
+    private $removedAt;
 
 
     /**
@@ -102,27 +102,27 @@ class DateLog
     }
 
     /**
-     * Set removeAt
+     * Set removedAt
      *
-     * @param \DateTime $removeAt
+     * @param \DateTime $removedAt
      *
      * @return DateLog
      */
-    public function setRemoveAt($removeAt)
+    public function setRemovedAt($removedAt)
     {
-        $this->removeAt = $removeAt;
+        $this->removedAt = $removedAt;
 
         return $this;
     }
 
     /**
-     * Get removeAt
+     * Get removedAt
      *
      * @return \DateTime
      */
-    public function getRemoveAt()
+    public function getRemovedAt()
     {
-        return $this->removeAt;
+        return $this->removedAt;
     }
 }
 

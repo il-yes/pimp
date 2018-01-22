@@ -8,20 +8,20 @@
 
 namespace PrestationBundle\Tests\Controller;
 
-use PrestationBundle\Factory\ActionFactory;
+use PrestationBundle\Factory\ActivityFactory;
 use Tests\Framework\WebTestCase;
-use PrestationBundle\Entity\Action;
+use PrestationBundle\Entity\activity;
 
-class ActionControllerTest extends WebTestCase
+class ActivityControllerTest extends WebTestCase
 {
     /**
-     * - create a new esthetic action
+     * - create a new esthetic activity
      * @test
      */
-    public function new_esthetic_action()
+    public function new_esthetic_activity()
     {
-        $factory  = new ActionFactory();
-        $action = $factory->createEsthetic('car wash', 15);
+        $factory  = new ActivityFactory();
+        $activity = $factory->createEsthetic('car wash', 15);
 
             $this->visit('/prestations/new')
                 ->assertResponseOk()
@@ -30,13 +30,13 @@ class ActionControllerTest extends WebTestCase
     }
 
     /**
-     * - create a new maintenance action
+     * - create a new maintenance activity
      * @test
      */
-    public function new_maintenance_action()
+    public function new_maintenance_activity()
     {
-        $factory  = new ActionFactory();
-        $action = $factory->createMaintenance('Car Repair', 27);
+        $factory  = new ActivityFactory();
+        $activity = $factory->createMaintenance('Car Repair', 27);
 
         $this->visit('/prestations/new')
             ->assertResponseOk()

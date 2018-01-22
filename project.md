@@ -52,16 +52,16 @@ Trait
 - DateLog
     - created_at
     - updated_at
-    - remove_at
+    - removed_at
 
 
 Entity 
 - Date :
     - startAt
     - endsAt
-    - cancelAt
+    - cancelsAt
     
-- Activité(action) : 
+- Activité : 
     - name
     - price
     - category (esthetic, maintenance, customizing)

@@ -5,12 +5,12 @@ namespace PrestationBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Action
+ * Activity
  *
- * @ORM\Table(name="action")
- * @ORM\Entity(repositoryClass="PrestationBundle\Repository\ActionRepository")
+ * @ORM\Table(name="activity")
+ * @ORM\Entity(repositoryClass="PrestationBundle\Repository\ActivityRepository")
  */
-class Action
+class Activity
 {
     /**
      * @var int
@@ -43,14 +43,16 @@ class Action
     private $category;
 
     /**
-     * Action constructor.
-     * @param string $name
-     * @param float $price
+     * Activity constructor.
+     * @param $_name
+     * @param $_category
+     * @param $_price
      */
-    public function __construct($name, $price)
+    public function __construct($_name, $_category, $_price)
     {
-        $this->name = $name;
-        $this->price = $price;
+        $this->name = $_name;
+        $this->price = $_price;
+        $this->category = $_category;
     }
 
 
@@ -69,7 +71,7 @@ class Action
      *
      * @param string $name
      *
-     * @return Action
+     * @return Activity
      */
     public function setName($name)
     {
@@ -93,7 +95,7 @@ class Action
      *
      * @param float $price
      *
-     * @return Action
+     * @return Activity
      */
     public function setPrice($price)
     {
@@ -113,5 +115,28 @@ class Action
     }
 
 
-}
 
+    /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Activity
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+}

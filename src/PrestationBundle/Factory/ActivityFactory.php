@@ -9,9 +9,9 @@
 namespace PrestationBundle\Factory;
 
 
-use PrestationBundle\Entity\Action;
+use PrestationBundle\Entity\Activity;
 
-class ActionFactory
+class ActivityFactory
 {
     const ESTHETIC = 'esthetic';
     const MAINTENANCE = 'maintenance';
@@ -20,16 +20,16 @@ class ActionFactory
 
     public function createEsthetic($name, $price)
     {
-        return new Action($name, self::ESTHETIC, $price);
+        return new Activity($name, self::ESTHETIC, $price);
     }
 
     public function createMaintenance($name, $price)
     {
-        return new Action($name, self::MAINTENANCE, $price);
+        return new Activity($name, self::MAINTENANCE, $price);
     }
 
     public function createCustomizing($name, $price)
     {
-        return new Action($name, self::CUSTOMIZING, $price);
+        return new Activity($name, self::CUSTOMIZING, $price);
     }
 }

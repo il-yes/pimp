@@ -9,15 +9,15 @@
 namespace PrestationBundle\Controller;
 
 
-use PrestationBundle\Entity\Action;
+use PrestationBundle\Entity\Activity;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class ActionController extends Controller
+class ActivityController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PrestationBundle/Action/index.html.twig');
+        return $this->render('PrestationBundle/Activity/index.html.twig');
     }
 
     public function newAction(Request $request)
@@ -36,6 +36,6 @@ class ActionController extends Controller
             return $this->redirectToRoute('prestation_action_index');
         */
 
-        return $this->render('Prestation/Action/new.html.twig', ['text' => 'Hello this is here to create a new acivity']);
+        return $this->render('Prestation/Activity/new.html.twig', ['text' => 'Hello this is here to create a new acivity']);
     }
 }
