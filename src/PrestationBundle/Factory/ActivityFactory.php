@@ -17,19 +17,43 @@ class ActivityFactory
     const MAINTENANCE = 'maintenance';
     const CUSTOMIZING = 'customizing';
 
+    public function createActivity($_name, $_category, $_price)
+    {
+        return new Activity($_name, $_category, $_price);
+    }
 
     public function createEsthetic($name, $price)
     {
-        return new Activity($name, self::ESTHETIC, $price);
+        return $this->createActivity($name, self::ESTHETIC, $price);
     }
 
     public function createMaintenance($name, $price)
     {
-        return new Activity($name, self::MAINTENANCE, $price);
+        return $this->createActivity($name, self::MAINTENANCE, $price);
     }
 
     public function createCustomizing($name, $price)
     {
-        return new Activity($name, self::CUSTOMIZING, $price);
+        return $this->createActivity($name, self::CUSTOMIZING, $price);
+    }
+
+    public function createFromSpecification($_name, $_category, $_price)
+    {
+        $_category = strtolower($_category);
+
+        switch ($_category)
+        {
+            case self::ESTHETIC :
+                return $this->createEsthetic($_name, $_category, $_price);
+                break;
+
+            case self::MAINTENANCE :
+                return $this->createMaintenance($_name, $_category, $_price);
+                break;
+
+            case self::CUSTOMIZING :
+                return $this->createCustomizing($_name, $_category, $_price);
+                break;
+        }
     }
 }

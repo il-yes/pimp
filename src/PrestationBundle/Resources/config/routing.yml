@@ -1,5 +1,5 @@
-# ******************************** ACTION *********************************
-prestation_action:
-    resource: "@PrestationBundle/Resources/config/routing/action.yml"
-    prefix:   /prestations
+# ******************************** ACTIVITY *********************************
+prestation_activity:
+    resource: "@PrestationBundle/Resources/config/routing/activity.yml"
+    prefix:   /prestations/activity
 

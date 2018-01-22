@@ -35,9 +35,9 @@ try {
     // echo $e->getMessage();
 } catch (RequestException $e) {
     // catches all RequestExceptions
-    echo $e->getRequest();
+    echo $e->getRequest()->getBody();
     if ($e->hasResponse()) {
-        echo $e->getResponse();
+        echo $e->getResponse()->getBody();
     }
 }
 

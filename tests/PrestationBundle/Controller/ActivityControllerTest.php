@@ -18,32 +18,20 @@ class ActivityControllerTest extends WebTestCase
      * - create a new esthetic activity
      * @test
      */
-    public function new_esthetic_activity()
+    public function createActivity()
     {
-        $factory  = new ActivityFactory();
+        $factory = new ActivityFactory();
         $activity = $factory->createEsthetic('car wash', 15);
 
-            $this->visit('/prestations/new')
-                ->assertResponseOk()
-                ->seeText('Creation')
-                ->seeText('welcome dear client -)');
-    }
-
-    /**
-     * - create a new maintenance activity
-     * @test
-     */
-    public function new_maintenance_activity()
-    {
-        $factory  = new ActivityFactory();
-        $activity = $factory->createMaintenance('Car Repair', 27);
-
-        $this->visit('/prestations/new')
+        $this->visit('/prestations/activity/new')
             ->assertResponseOk()
             ->seeText('Creation')
-            ->seeText('welcome dear client -)');
-
+            ->seeText('Hello this is here to create a new acivity');
     }
+
+
+
+
 
 
 }

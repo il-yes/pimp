@@ -16,44 +16,45 @@ use PrestationBundle\Factory\ActivityFactory;
 class ActivityFactoryTest extends TestCase
 {
     /**
+     * @dataProvider createFromSpecification
      * @test
+     * @param $name
+     * @param $category
+     * @param $price
      */
-    public function createEsthetic()
+    public function createActivityFromSpecification($name, $category, $price)
     {
         $factory = new ActivityFactory();
-        $activity = $factory->createEsthetic('Car Polish', 15);
+        $activity = $factory->createfromSpecification($name, $category, $price);
 
-        $this->assertEquals('Car Polish', $activity->getName());
-        $this->assertEquals(15, $activity->getPrice());
-        $this->assertEquals('esthetic', $activity->getCategory());
+        switch ($category)
+        {
+            case ActivityFactory::ESTHETIC :
+                $this->assertEquals('esthetic', $activity->getCategory());
+                break;
+
+            case ActivityFactory::MAINTENANCE :
+                $this->assertEquals('maintenance', $activity->getCategory());
+                break;
+
+            case ActivityFactory::CUSTOMIZING :
+                $this->assertEquals('customizing', $activity->getCategory());
+                break;
+        }
+
+        $this->assertTrue(is_string($name));
+        $this->assertTrue(is_integer($price));
     }
 
 
-    /**
-     * @test
-     */
-    public function createMaintenance()
+    public function createFromSpecification()
     {
-        $factory = new ActivityFactory();
-        $activity = $factory->createMaintenance('car repair', 45);
-
-        $this->assertEquals('car repair', $activity->getName());
-        $this->assertEquals(45, $activity->getPrice());
-        $this->assertEquals('maintenance', $activity->getCategory());
-    }
-
-
-    /**
-     * @test
-     */
-    public function createCustomizing()
-    {
-        $factory = new ActivityFactory();
-        $activity = $factory->createCustomizing('pimp my car baby !!!', 245);
-
-        $this->assertEquals('pimp my car baby !!!', $activity->getName());
-        $this->assertEquals(245, $activity->getPrice());
-        $this->assertEquals('customizing', $activity->getCategory());
+        return [
+            // $name, $category, $price
+            ['car polish', 'maintenance', 45],
+            ['salon','esthetic', 235 ],
+            ['Music System', 'customizing', 300],
+        ];
     }
 
 }
