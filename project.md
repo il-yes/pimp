@@ -44,14 +44,17 @@ Bundle :
 - PrestationBundle
 - ProductBundle (buildings, vehicules)
 - OrderBundle
+- MediaBundle (images, videos)
 
 
 
-Entity : 
+Trait
 - DateLog
     - created_at
     - updated_at
 
+
+Entity 
 - Date :
     - startAt
     - endsAt
@@ -61,9 +64,15 @@ Entity :
     - name
     - price
     - category (esthetic, maintenance, customizing)
+    - execution time
     
 - Workshop :
     - name
     - activity
     - isAvailable 
     - capacity (small, classic, large)
+
+- Image
+
+- video
+
