@@ -9,14 +9,14 @@ Project : PIMP MY CAR
 - document
 - user
 - calendar
-- cart
+- cart / order
 - workshop (atelier)
 
 1/ Event : 
-Un event est constitué d'un vehicule, d'une prestation, d'une date
+Un event est constitué d'un vehicule, d'une prestation et d'un user
 
 2/ prestation :
-Une prestation est constituée d'une action et d'une equipe
+Une prestation est constituée d'une activité et d'un atelier
 
 3/ Vehicule : 
 Un Vehicule est constitué d'une voiture, d'une moto ou d'un car
@@ -31,7 +31,7 @@ Un event est constitué de pieces justificatifs ou d'un bon de commande ou d'un 
 Un user est constitué d'un prestataire dans une equipe ou d'un client
 
 7/ Calendar
-Un calendar est constitué d'events
+Un calendar est constitué d'events et de dates
 
 8/ Workshop :
 Un atelier est constitué d'une activité et d'une capacité de contenance
@@ -42,7 +42,7 @@ Bundle :
 - UserBundle
 - EventBundle
 - PrestationBundle
-- ProductBundle
+- ProductBundle (buildings, vehicules)
 - OrderBundle
 
 
