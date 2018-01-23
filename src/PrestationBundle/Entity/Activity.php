@@ -54,6 +54,13 @@ class Activity
      */
     private $workshops;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PrestationBundle\Entity\Prestation", mappedBy="activity", cascade={"persist"})
+     */
+    private $prestation;
+
+
+
 
     /**
      * Activity constructor.

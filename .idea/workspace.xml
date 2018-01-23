@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ceb6c40-4e93-4251-8a18-3d011803ac0a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/PrestationBundle/Controller/DefaultControllerTest.php" afterPath="$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OrderBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/OrderBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OrderBundle/Service/ReferenceBuilder.php" afterPath="$PROJECT_DIR$/src/OrderBundle/Service/ReferenceBuilder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php" afterPath="$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php" afterPath="$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php" afterPath="$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +32,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrestationControllerTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Activity.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="54" column="13" lean-forward="false" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrestationControllerTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="336">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#53#92#0#PHP" expanded="true" />
               </folding>
@@ -47,11 +54,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Prestation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="36" column="90" lean-forward="false" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Workshop.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="41" selection-end-column="22" />
+            <state relative-caret-position="336">
+              <caret line="50" column="91" lean-forward="false" selection-start-line="50" selection-start-column="91" selection-end-line="50" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -133,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/PrestationBundle/Controller/ActionController.php" />
         <option value="$PROJECT_DIR$/tests/ProductBundle/Factory/WorshopFactory.php" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Model/CapactyBuilder.php" />
-        <option value="$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php" />
         <option value="$PROJECT_DIR$/tests/ProductBundle/Controller/WorkshopControllerTest.php" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Exception/WhatIsmyMotherFunckyName.php" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Factory/WorkshopFactory.php" />
@@ -159,10 +175,11 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/project.md" />
         <option value="$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php" />
         <option value="$PROJECT_DIR$/src/OrderBundle/Service/ReferenceBuilder.php" />
         <option value="$PROJECT_DIR$/src/OrderBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php" />
       </list>
     </option>
   </component>
@@ -581,12 +598,12 @@
       <workItem from="1516451134042" duration="18682000" />
       <workItem from="1516538635798" duration="26348000" />
       <workItem from="1516658620600" duration="5727000" />
-      <workItem from="1516694301419" duration="2928000" />
+      <workItem from="1516694301419" duration="5254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54594000" />
+    <option name="totallyTimeSpent" value="56920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="-11" width="1319" height="780" extended-state="6" />
@@ -902,34 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="41" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -958,11 +951,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        <state relative-caret-position="336">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#53#92#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="50" column="91" lean-forward="false" selection-start-line="50" selection-start-column="91" selection-end-line="50" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="54" column="13" lean-forward="false" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="36" column="90" lean-forward="false" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+          <folding />
         </state>
       </provider>
     </entry>

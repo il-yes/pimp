@@ -35,13 +35,6 @@ class Workshop
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="activity", type="string", length=100)
-     */
-    private $activity;
-
-    /**
     @var string
      *
      * @ORM\Column(name="capacity", type="string", length=100)
@@ -53,6 +46,11 @@ class Workshop
      * @ORM\Column(name="is_available", type="boolean")
      */
     private $isAvailable;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PrestationBundle\Entity\Prestation", mappedBy="workshop", cascade={"persist"})
+     */
+    private $prestation;
 
     /**
      * Workshop constructor.

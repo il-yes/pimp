@@ -29,11 +29,14 @@ class Prestation
     private $reference;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="activity", type="string", length=100)
+     * @ORM\ManyToOne(targetEntity="PrestationBundle\Entity\Activity", inversedBy="prestation")
      */
     private $activity;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ProductBundle\Entity\Workshop", inversedBy="prestation")
+     */
+    private $workshop;
 
 
     /**
