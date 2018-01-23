@@ -43,6 +43,13 @@ class Activity
     private $category;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="execution_time", type="float", nullable=true)
+     */
+    private $executionTime;
+
+    /**
      * Activity constructor.
      * @param $_name
      * @param $_category
@@ -139,4 +146,27 @@ class Activity
     {
         return $this->category;
     }
+
+    /**
+     * @return float
+     */
+    public function getExecutionTime()
+    {
+        $this->executionTime;
+
+        return $this;
+    }
+
+    /**
+     * @param $executionTime
+     * @return $this
+     */
+    public function setExecutionTime($executionTime)
+    {
+        $this->executionTime = $executionTime;
+
+        return $this;
+    }
+
+
 }

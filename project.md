@@ -24,13 +24,13 @@ Un Vehicule est constitué d'une voiture, d'une moto ou d'un car
 4/ Date : 
 Une date est constituée d'une année, d'un mois ,d'un jour, d'une heure
 
-5/ Document
+5/ Document : 
 Un document est constitué de pieces justificatifs ou d'un bon de commande ou d'un rapport ou d'une facture 
 
 6/ User : 
-Un user est constitué d'un prestataire dans une equipe ou d'un client
+Un user est constitué d'un technicien (technician) dans une equipe ou d'un client (customer) ou d'un admin
 
-7/ Calendar
+7/ Calendar :
 Un calendar est constitué d'events et de dates
 
 8/ Workshop :
@@ -57,7 +57,7 @@ Trait
 
 Entity 
 - Date :
-    - startAt
+    - startsAt
     - endsAt
     - cancelsAt
     
