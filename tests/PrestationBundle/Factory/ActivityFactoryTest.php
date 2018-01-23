@@ -27,7 +27,7 @@ class ActivityFactoryTest extends TestCase
         $factory = new ActivityFactory();
         $activity = $factory->createfromSpecification($name, $category, $price);
 
-
+        die(var_dump($activity));
         switch ($category)
         {
             case ActivityFactory::ESTHETIC :

@@ -18,9 +18,9 @@ class ActivityFactory implements FactoryBuilderInterface
     const MAINTENANCE = 'maintenance';
     const CUSTOMIZING = 'customizing';
 
-    public function createActivity($_name, $_category, $_price)
+    public function createActivity($name, $category, $price)
     {
-        return new Activity($_name, $_category, $_price);
+        return new Activity($name, $category, $price);
     }
 
     public function createEsthetic($name, $price)
@@ -45,15 +45,15 @@ class ActivityFactory implements FactoryBuilderInterface
         switch ($_category)
         {
             case self::ESTHETIC :
-                return $this->createEsthetic($_name, $_category, $_price);
+                return $this->createEsthetic($_name, $_price);
                 break;
 
             case self::MAINTENANCE :
-                return $this->createMaintenance($_name, $_category, $_price);
+                return $this->createMaintenance($_name, $_price);
                 break;
 
             case self::CUSTOMIZING :
-                return $this->createCustomizing($_name, $_category, $_price);
+                return $this->createCustomizing($_name, $_price);
                 break;
         }
     }

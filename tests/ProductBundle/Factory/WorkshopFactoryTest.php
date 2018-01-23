@@ -9,11 +9,14 @@
 namespace ProductBundle\Tests\Factory;
 
 use PHPUnit\Framework\TestCase;
+use PrestationBundle\Entity\Activity;
+use PrestationBundle\Factory\ActivityFactory;
 use ProductBundle\Exception\WhatIsMyMotherFunckinName;
 use ProductBundle\Factory\WorkshopFactory;
+use Tests\Framework\WebTestCase;
 
 
-class WorkshopFactoryTest extends TestCase
+class WorkshopFactoryTest extends WebTestCase
 {
     const SMALL = 'small';
 
@@ -21,18 +24,43 @@ class WorkshopFactoryTest extends TestCase
 
     const LARGE = 'large';
 
+    private $activitiesRequest = [
+        // $key, $_name, $_category, $_price
+        'activityPainting' => [
+            'name' => 'Car Painting',
+            'category' => ActivityFactory::ESTHETIC,
+            'price' => 45,
+        ],
+        'activityRepair' => [
+            'name' => 'Denting',
+            'category' => ActivityFactory::MAINTENANCE,
+            'price' => 75,
+        ],
+        'activityCustom' => [
+            'name' => 'Car Interior',
+            'category' => ActivityFactory::CUSTOMIZING,
+            'price' => 15,
+        ]
+    ];
+
     /**
      * - Création d'ateliers
      * @test
      */
     public function createWorkshop()
     {
-        $factory = new WorkshopFactory();
-        $workshop = $factory->createSmallWorkshop('venus', 'Painting', true);
+        $workshopFactory = new WorkshopFactory();
+        $activityFactory = new ActivityFactory();
+
+        $activity = $activityFactory->createEsthetic('Painting', 35);
+        $this->saveEntity($activity);
+
+        $activity = $this->findActivity($activity)[0];
+        $workshop = $workshopFactory->createSmallWorkshop('venus', $activity, true);
+        $activity->addWorkshop($workshop);
 
         $this->assertEquals('venus', $workshop->getName());
         $this->assertEquals('small', $workshop->getCapacity());
-        $this->assertEquals('Painting', $workshop->getActivity());
     }
 
 
@@ -49,9 +77,17 @@ class WorkshopFactoryTest extends TestCase
      */
     public function createWorkshopsFromSpecifications($name, $activity, $capacity, $isAvailable)
     {
+        $requestedActivities = $this->createActivities();
+        //$this->dataMigration($requestedActivities);
+        $activities = $this->retrieveSavedActivities([
+            $this->activitiesRequest['activityPainting']['name'],
+            $this->activitiesRequest['activityRepair']['name'],
+            $this->activitiesRequest['activityCustom']['name']
+        ]);
+
         $factory = new WorkshopFactory();
         $workshop = $factory->createFromSpecification($name, $activity, $capacity, $isAvailable);
-
+var_dump($workshop);
         switch ($capacity)
         {
             case 'small' :
@@ -69,9 +105,9 @@ class WorkshopFactoryTest extends TestCase
 
         if ($isAvailable)
         {
-            $this->assertEquals(true, $workshop->isAvailable());
+            $this->assertEquals(true, $workshop->getIsAvailable());
         }else{
-            $this->assertEquals(false, $workshop->isAvailable());
+            $this->assertEquals(false, $workshop->getIsAvailable());
         }
 
 
@@ -86,11 +122,11 @@ class WorkshopFactoryTest extends TestCase
         $inUse = false;
         return [
             // $name, $activity, $capacity, $isAvailable = false
-            ['venus', 'Painting', self::SMALL, $inUse],
-            ['oregon', 'car repair', self::LARGE, true],
-            ['mars', 'washing', self::CLASSIC, $inUse],
-            ['neptune', 'polish', self::LARGE, true],
-            ['', 'polish', self::LARGE, true],
+            ['venus', null, self::SMALL, $inUse],
+            ['oregon', null, self::LARGE, true],
+            ['mars', null, self::CLASSIC, $inUse],
+            ['neptune', null, self::LARGE, true],
+            ['', null, self::LARGE, true],
         ];
     }
 
@@ -106,6 +142,41 @@ class WorkshopFactoryTest extends TestCase
         $this->expectException(WhatIsMyMotherFunckinName::class);
         $workshop = $factory->createSmallWorkshop(45, 'Painting', true);
 
+    }
+
+    private function createActivities()
+    {
+        $activityFactory = new ActivityFactory();
+        $activities = [];
+
+        foreach ($this->activitiesRequest as $metadata)
+        {
+            array_push($activities, $activityFactory->createFromSpecification($metadata['name'], $metadata['category'], $metadata['price']));
+        }
+        return $activities;
+    }
+
+    private function dataMigration($entities)
+    {
+        foreach ($entities as $entity)
+        {
+            $this->saveEntity($entity);
+        }
+    }
+
+    private function retrieveSavedActivities($nameActivities = [])
+    {
+        $activities = [];
+        foreach ($nameActivities as $name)
+        {
+            array_push($activities, $this->em->getRepository(Activity::class)->findOneBy(['name' => $name]));
+        }
+        return $activities;
+    }
+
+    private function findActivity($activity)
+    {
+        return $this->em->getRepository(Activity::class)->findBy(['name' =>$activity->getName()]);
     }
 
 }

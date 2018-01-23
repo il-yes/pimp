@@ -1,0 +1,81 @@
+<?php
+
+namespace PrestationBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Activity
+ *
+ * @ORM\Table(name="activity")
+ * @ORM\Entity(repositoryClass="PrestationBundle\Repository\ActivityRepository")
+ */
+class Activity
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100)
+     */
+    private $name;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="price", type="float")
+     */
+    private $price;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=100)
+     */
+    private $category;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="execution_time", type="float", nullable=true)
+     */
+    private $executionTime;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ProductBundle\Entity\Workshop", cascade={"persist"})
+     * @ORM\JoinTable(name="activity_workshop",
+     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="workshop_id", referencedColumnName="id", nullable=true)})
+     */
+    private $workshops;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PrestationBundle\Entity\Prestation", mappedBy="activity", cascade={"persist"})
+     */
+    private $prestation;
+
+
+
+
+    /**
+     * Activity constructor.
+     * @param $_name
+     * @param $_category
+     * @param $_price
+     */
+    public function __construct($_name, $_category, $_price)
+    {
+        $this->name = $_name;
+        $this->price = $_price;
+        $this->category = $_category;
+    }
+
+}

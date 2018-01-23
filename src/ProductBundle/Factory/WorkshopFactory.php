@@ -9,18 +9,19 @@
 namespace ProductBundle\Factory;
 
 
+use PrestationBundle\Entity\Activity;
 use ProductBundle\Entity\Workshop;
 use ProductBundle\Exception\WhatIsMyMotherFunckinName;
 
 class WorkshopFactory
 {
-    private function createWorkshop($name, $activity, $capacity, $isAvailable = false)
+    private function createWorkshop($name, $activity = null, $capacity, $isAvailable = false)
     {
-        if (!$this->canAddAWorshop($name))
+        if (!$this->canAddAWorshop($name, $activity, $capacity))
         {
             throw new WhatIsMyMotherFunckinName();
         }
-        return new Workshop($name, $activity, $capacity, $isAvailable, $isAvailable = false);
+        return new Workshop($name, $activity, $capacity, $isAvailable, $isAvailable);
     }
 
     /**
@@ -60,7 +61,7 @@ class WorkshopFactory
     }
 
 
-    public function createFromSpecification($name, $activity, $storage, $isAvailable = false)
+    public function createFromSpecification($name, $activity = null, $storage, $isAvailable = false)
     {
         $storage = strtolower($storage);
 
@@ -86,12 +87,21 @@ class WorkshopFactory
      * @param $name
      * @return bool
      */
-    public function canAddAWorshop($name)
+    public function canAddAWorshop($name, $activity, $capacity)
     {
-        if ($name != '' && is_string($name) )
+        if ($name = '' || !is_string($name) )
         {
-            return true;
+            return false;
         }
-        return false;
+        if ($activity != null && !$activity instanceof Activity)
+        {
+            return false;
+        }
+        if (!is_string($capacity))
+        {
+            return false;
+        }
+
+        return true;
     }
 }

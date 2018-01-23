@@ -51,6 +51,9 @@ class Activity
 
     /**
      * @ORM\ManyToMany(targetEntity="ProductBundle\Entity\Workshop", cascade={"persist"})
+     * @ORM\JoinTable(name="activity_workshop",
+     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="workshop_id", referencedColumnName="id", nullable=true)})
      */
     private $workshops;
 
@@ -71,15 +74,15 @@ class Activity
     public function __construct($_name, $_category, $_price)
     {
         $this->name = $_name;
-        $this->price = $_price;
         $this->category = $_category;
+        $this->price = $_price;
     }
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -134,8 +137,6 @@ class Activity
         return $this->price;
     }
 
-
-
     /**
      * Set category
      *
@@ -161,18 +162,11 @@ class Activity
     }
 
     /**
-     * @return float
-     */
-    public function getExecutionTime()
-    {
-        $this->executionTime;
-
-        return $this;
-    }
-
-    /**
-     * @param $executionTime
-     * @return $this
+     * Set executionTime
+     *
+     * @param float $executionTime
+     *
+     * @return Activity
      */
     public function setExecutionTime($executionTime)
     {
@@ -182,25 +176,80 @@ class Activity
     }
 
     /**
-     * @return mixed
+     * Get executionTime
+     *
+     * @return float
      */
-    public function getWorkshops()
+    public function getExecutionTime()
     {
-        $this->workshops;
+        return $this->executionTime;
+    }
+
+    /**
+     * Add workshop
+     *
+     * @param \ProductBundle\Entity\Workshop $workshop
+     *
+     * @return Activity
+     */
+    public function addWorkshop(\ProductBundle\Entity\Workshop $workshop)
+    {
+        $this->workshops[] = $workshop;
 
         return $this;
     }
 
     /**
-     * @param $workshops
-     * @return $this
+     * Remove workshop
+     *
+     * @param \ProductBundle\Entity\Workshop $workshop
      */
-    public function setWorkshops($workshops)
+    public function removeWorkshop(\ProductBundle\Entity\Workshop $workshop)
     {
-        $this->workshops = $workshops;
+        $this->workshops->removeElement($workshop);
+    }
+
+    /**
+     * Get workshops
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getWorkshops()
+    {
+        return $this->workshops;
+    }
+
+    /**
+     * Add prestation
+     *
+     * @param \PrestationBundle\Entity\Prestation $prestation
+     *
+     * @return Activity
+     */
+    public function addPrestation(\PrestationBundle\Entity\Prestation $prestation)
+    {
+        $this->prestation[] = $prestation;
 
         return $this;
     }
 
+    /**
+     * Remove prestation
+     *
+     * @param \PrestationBundle\Entity\Prestation $prestation
+     */
+    public function removePrestation(\PrestationBundle\Entity\Prestation $prestation)
+    {
+        $this->prestation->removeElement($prestation);
+    }
 
+    /**
+     * Get prestation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPrestation()
+    {
+        return $this->prestation;
+    }
 }

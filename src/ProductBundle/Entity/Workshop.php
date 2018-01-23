@@ -71,63 +71,7 @@ class Workshop
     }
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Workshop
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set activity
-     *
-     * @param string $activity
-     *
-     * @return Workshop
-     */
-    public function setActivity($activity)
-    {
-        $this->activity = $activity;
-
-        return $this;
-    }
-
-    /**
-     * Get activity
-     *
-     * @return string
-     */
-    public function getActivity()
-    {
-        return $this->activity;
-    }
 
 
     /**
@@ -171,20 +115,96 @@ class Workshop
         return $this->capacity;
     }
 
+
     /**
-     * @return bool
+     * Get id
+     *
+     * @return integer
      */
-    public function isAvailable()
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Workshop
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set isAvailable
+     *
+     * @param boolean $isAvailable
+     *
+     * @return Workshop
+     */
+    public function setIsAvailable($isAvailable)
+    {
+        $this->isAvailable = $isAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Get isAvailable
+     *
+     * @return boolean
+     */
+    public function getIsAvailable()
     {
         return $this->isAvailable;
     }
 
     /**
-     * @param bool $isAvailable
+     * Add prestation
+     *
+     * @param \PrestationBundle\Entity\Prestation $prestation
+     *
+     * @return Workshop
      */
-    public function setIsAvailable($isAvailable)
+    public function addPrestation(\PrestationBundle\Entity\Prestation $prestation)
     {
-        $this->isAvailable = $isAvailable;
+        $this->prestation[] = $prestation;
+
+        return $this;
     }
 
+    /**
+     * Remove prestation
+     *
+     * @param \PrestationBundle\Entity\Prestation $prestation
+     */
+    public function removePrestation(\PrestationBundle\Entity\Prestation $prestation)
+    {
+        $this->prestation->removeElement($prestation);
+    }
+
+    /**
+     * Get prestation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPrestation()
+    {
+        return $this->prestation;
+    }
 }

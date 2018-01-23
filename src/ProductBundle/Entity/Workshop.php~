@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Workshop
 {
+    const SMALL = 'small';
+
+    const CLASSIC = 'classic';
+
+    const LARGE = 'large';
+
     /**
      * @var int
      *
@@ -29,13 +35,6 @@ class Workshop
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="activity", type="string", length=100)
-     */
-    private $activity;
-
-    /**
     @var string
      *
      * @ORM\Column(name="capacity", type="string", length=100)
@@ -43,76 +42,77 @@ class Workshop
     private $capacity;
 
     /**
+     * @var boolean
+     * @ORM\Column(name="is_available", type="boolean")
+     */
+    private $isAvailable;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PrestationBundle\Entity\Prestation", mappedBy="workshop", cascade={"persist"})
+     */
+    private $prestation;
+
+    /**
      * Workshop constructor.
      * @param string $name
      * @param string $activity
      * @param string $capacity
      */
-    public function __construct($name, $activity, $capacity)
+    public function __construct($name, $activity, $capacity, $isAvailable = false)
     {
         $this->name = $name;
         $this->activity = $activity;
-        $this->capacity = $capacity;
+        $this->setCapacity($capacity);
+
+        if ($isAvailable)
+        {
+            $this->isAvailable = true;
+        }
     }
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+
+
 
     /**
-     * Set name
+     * Set capacity
      *
-     * @param string $name
+     * @param string $capacity
      *
      * @return Workshop
      */
-    public function setName($name)
+    public function setCapacity($capacity)
     {
-        $this->name = $name;
+        $capacity = strtolower($capacity);
+
+        switch ($capacity)
+        {
+            case 'small' :
+                $this->capacity = self::SMALL;
+                break;
+
+            case 'classic' :
+                $this->capacity = self::CLASSIC;
+                break;
+
+            case 'large' :
+                $this->capacity = self::LARGE;
+                break;
+            default :
+                $this->capacity = self::CLASSIC;
+        }
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get capacity
      *
      * @return string
      */
-    public function getName()
+    public function getCapacity()
     {
-        return $this->name;
-    }
-
-    /**
-     * Set activity
-     *
-     * @param string $activity
-     *
-     * @return Workshop
-     */
-    public function setActivity($activity)
-    {
-        $this->activity = $activity;
-
-        return $this;
-    }
-
-    /**
-     * Get activity
-     *
-     * @return string
-     */
-    public function getActivity()
-    {
-        return $this->activity;
+        return $this->capacity;
     }
 
 }
-

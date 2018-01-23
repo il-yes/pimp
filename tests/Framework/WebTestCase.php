@@ -82,7 +82,11 @@ class WebTestCase extends BaseTestCase
         return $this;
     }
 
-
+    public function saveEntity($entity)
+    {
+        $this->em->persist($entity);
+        $this->em->flush();
+    }
 
 
     protected function onNotSuccessfulTest(Throwable $t)
