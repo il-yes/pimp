@@ -8,12 +8,17 @@
 
 namespace OrderBundle\Service;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Security\Core\SecurityContext;
+use Doctrine\ORM\EntityManager;
 
 class ReferenceBuilder
 {
-    public function __construct($securityContext, $entityManager)
+    private $container;
+
+    public function __construct(ContainerInterface $container, EntityManager $entityManager)
     {
-        $this->securityContext = $securityContext;
+        $this->container = $container;
         $this->em = $entityManager;
     }
 
@@ -25,6 +30,12 @@ class ReferenceBuilder
             return 1;
         else
             return $reference->getReference() +1;
+    }
+
+    private function getSecurityContext()
+    {
+        return $this->container->get('security.context_listener');
+
     }
 
 

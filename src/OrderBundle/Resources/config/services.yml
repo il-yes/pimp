@@ -3,6 +3,6 @@ services:
 #        class: OrderBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
 
-    setNewReference:
+    order.reference_builder:
         class: OrderBundle\Service\ReferenceBuilder
-        arguments: [  '@security.context' , '@doctrine.orm.entity_manager' ]
+        arguments: [  '@service_container' , '@doctrine.orm.entity_manager' ]

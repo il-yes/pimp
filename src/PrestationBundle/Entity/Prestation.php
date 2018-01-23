@@ -28,6 +28,13 @@ class Prestation
      */
     private $reference;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="activity", type="string", length=100)
+     */
+    private $activity;
+
 
     /**
      * Get id

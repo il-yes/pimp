@@ -50,6 +50,12 @@ class Activity
     private $executionTime;
 
     /**
+     * @ORM\ManyToMany(targetEntity="ProductBundle\Entity\Workshop", cascade={"persist"})
+     */
+    private $workshops;
+
+
+    /**
      * Activity constructor.
      * @param $_name
      * @param $_category
@@ -164,6 +170,27 @@ class Activity
     public function setExecutionTime($executionTime)
     {
         $this->executionTime = $executionTime;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWorkshops()
+    {
+        $this->workshops;
+
+        return $this;
+    }
+
+    /**
+     * @param $workshops
+     * @return $this
+     */
+    public function setWorkshops($workshops)
+    {
+        $this->workshops = $workshops;
 
         return $this;
     }
