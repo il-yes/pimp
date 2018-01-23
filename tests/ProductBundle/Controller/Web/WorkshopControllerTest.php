@@ -9,6 +9,7 @@
 namespace ProductBundle\Tests\Controller\Web;
 
 
+use PrestationBundle\Manager\ActivityManager;
 use Tests\Framework\WebTestCase;
 
 class WorkshopControllerTest extends WebTestCase

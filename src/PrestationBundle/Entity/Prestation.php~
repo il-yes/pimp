@@ -24,7 +24,7 @@ class Prestation
     /**
      * @var string
      *
-     * @ORM\Column(name="reference", type="string", length=255)
+     * @ORM\Column(name="reference", type="string", length=255, nullable=true)
      */
     private $reference;
 
@@ -34,10 +34,61 @@ class Prestation
     private $activity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ProductBundle\Entity\Workshop", inversedBy="prestation")
+     * Get id
+     *
+     * @return integer
      */
-    private $workshop;
+    public function getId()
+    {
+        return $this->id;
+    }
 
+    /**
+     * Set reference
+     *
+     * @param string $reference
+     *
+     * @return Prestation
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Get reference
+     *
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * Set activity
+     *
+     * @param \PrestationBundle\Entity\Activity $activity
+     *
+     * @return Prestation
+     */
+    public function setActivity(\PrestationBundle\Entity\Activity $activity = null)
+    {
+        $this->activity = $activity;
+
+        return $this;
+    }
+
+    /**
+     * Get activity
+     *
+     * @return \PrestationBundle\Entity\Activity
+     */
+    public function getActivity()
+    {
+        return $this->activity;
+    }
 
 }
-

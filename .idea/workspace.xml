@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ceb6c40-4e93-4251-8a18-3d011803ac0a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.md" afterPath="$PROJECT_DIR$/project.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/Prestation/Prestation/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CoreBundle/Manager/ManagerApplication.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadActivityArgument.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadPriceArgument.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PrestationBundle/Manager/ActivityManager.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing/prestation.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ProductBundle/Exception/Workshop/BadCapacityArgument.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/PrestationBundle/Manager/ActivityManagerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/ProductBundle/Manager/WorkshopManager.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/ProductBundle/Controller/Web/DefaultControllerTest.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PrestationBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/PrestationBundle/Controller/PrestationController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PrestationBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Prestation/Prestation/index.html.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ProductBundle/Exception/WhatIsMyMotherFunckinName.php" afterPath="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/WhatIsMyMotherFunckinName.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/CoreBundle/Resources/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php" afterPath="$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php" afterPath="$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrestationBundle/Factory/ActivityFactory.php" afterPath="$PROJECT_DIR$/src/PrestationBundle/Factory/ActivityFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrestationBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/PrestationBundle/Resources/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php" afterPath="$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProductBundle/Factory/WorkshopFactory.php" afterPath="$PROJECT_DIR$/src/ProductBundle/Factory/WorkshopFactory.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Framework/WebTestCase.php" afterPath="$PROJECT_DIR$/tests/Framework/WebTestCase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/PrestationBundle/Controller/ActivityControllerTest.php" afterPath="$PROJECT_DIR$/tests/PrestationBundle/Controller/ActivityControllerTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php" afterPath="$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/PrestationBundle/Factory/ActivityFactoryTest.php" afterPath="$PROJECT_DIR$/tests/PrestationBundle/Factory/ActivityFactoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ProductBundle/Controller/Web/WorkshopControllerTest.php" afterPath="$PROJECT_DIR$/tests/ProductBundle/Controller/Web/WorkshopControllerTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ProductBundle/Factory/WorkshopFactoryTest.php" afterPath="$PROJECT_DIR$/tests/ProductBundle/Factory/WorkshopFactoryTest.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,25 +43,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="project.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="72">
-                <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Prestation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php">
+      <file leaf-file-name="ActivityControllerTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/ActivityControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="322">
+              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+              <folding>
+                <element signature="e#134#179#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Factory/ActivityFactoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -62,30 +68,31 @@
       <file leaf-file-name="WorkshopFactoryTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/ProductBundle/Factory/WorkshopFactoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+            <state relative-caret-position="387">
+              <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding>
-                <element signature="e#1142#1704#0#PHP" expanded="false" />
+                <element signature="e#129#189#0#PHP" expanded="true" />
+                <element signature="e#596#1127#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Workshop.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php">
+      <file leaf-file-name="BadActivityArgument.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadActivityArgument.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="173" column="27" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="27" />
+            <state relative-caret-position="120">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkshopFactory.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WorkshopFactory.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ProductBundle/Factory/WorkshopFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+            <state relative-caret-position="744">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding>
                 <element signature="e#123#160#0#PHP" expanded="true" />
               </folding>
@@ -96,8 +103,8 @@
       <file leaf-file-name="PrestationControllerTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            <state relative-caret-position="720">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="e#53#92#0#PHP" expanded="true" />
               </folding>
@@ -105,14 +112,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityFactory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Factory/ActivityFactory.php">
+      <file leaf-file-name="ActivityManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Manager/ActivityManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-              <folding>
-                <element signature="e#6#86#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,36 +126,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sav</find>
-      <find>save</find>
-      <find>saveE</find>
-      <find>saveEn</find>
-      <find>saveEnt</find>
-      <find>saveEnti</find>
-      <find>saveEntit</find>
-      <find>saveEntity</find>
-      <find>saveEntity(</find>
-      <find>saveEntity($</find>
-      <find>saveEntity($en</find>
-      <find>saveEntity($enty</find>
-      <find>saveEntity($entti</find>
-      <find>saveEntity($entt</find>
-      <find>saveEntity($ent</find>
-      <find>saveEntity($entiy</find>
-      <find>saveEntity($enti</find>
-      <find>saveEntity($entit</find>
-      <find>saveEntity($entity</find>
-      <find>saveEntity($entity)</find>
-      <find>add</find>
-      <find>find</find>
-      <find>di</find>
       <find>isAva</find>
-      <find>-&gt;isAvailable()</find>
-      <find>canNotCreateAWorkshopWithoutAName</find>
-      <find>$activity-&gt;get</find>
+      <find>presta</find>
+      <find>dataM</find>
+      <find>$this-&gt;activityManager</find>
+      <find>activityMa</find>
+      <find>FIND</find>
+      <find>add</find>
+      <find>getW</find>
+      <find>retrieveSavedActivities</find>
+      <find>prestation_activity</find>
+      <find>Activity</find>
+      <find>getA</find>
+      <find>find</find>
+      <find>findActivity</find>
+      <find>di</find>
+      <find>container</find>
       <find>die</find>
-      <find>createW</find>
-      <find>cannot</find>
+      <find>$this-&gt;saveEntity</find>
+      <find>retrieveSavedActivitiesByName</find>
+      <find>-&gt;getWorkshops()</find>
+      <find>$workshops</find>
+      <find>workshops</find>
+      <find>wha</find>
+      <find>BadActivi</find>
+      <find>WhatIsMyMotherFunckinNam</find>
+      <find>Wha</find>
+      <find>What</find>
+      <find>WhatIsMyMotherFunckinName</find>
+      <find>BadCapacityArgument</find>
+      <find>BadActivityArgument</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -162,31 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Resources/views/Action/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/config/config_test.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Prestation/Action/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Entity/Action.php" />
-        <option value="$PROJECT_DIR$/tests/PrestationBundle/Factory/ActionFactory.php" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Factory/ActionFactory.php" />
-        <option value="$PROJECT_DIR$/tests/PrestationBundle/Factory/ActionFactoryTest.php" />
-        <option value="$PROJECT_DIR$/tests/PrestationBundle/Controller/ActionControllerTest.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Prestation/Action/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing/action.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/tests/PrestationBundle/Controller/WorkshopController.php" />
-        <option value="$PROJECT_DIR$/src/ProductBundle/Resources/config/routing/action.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Product/Workshop/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/ProductBundle/Controller/WorkshopController.php" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Controller/ActionController.php" />
-        <option value="$PROJECT_DIR$/tests/ProductBundle/Factory/WorshopFactory.php" />
-        <option value="$PROJECT_DIR$/src/ProductBundle/Model/CapactyBuilder.php" />
-        <option value="$PROJECT_DIR$/tests/ProductBundle/Controller/WorkshopControllerTest.php" />
-        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/WhatIsmyMotherFunckyName.php" />
-        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/WhatIsMyMotherFunckyName.php" />
-        <option value="$PROJECT_DIR$/tests/ProductBundle/Controller/Web/DefaultControllerTest.php" />
-        <option value="$PROJECT_DIR$/tests/ProductBundle/Controller/Web/WorkshopControllerTest.php" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Controller/Web/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Resources/config/routing/workshop.yml" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Resources/config/routing.yml" />
@@ -195,24 +175,49 @@
         <option value="$PROJECT_DIR$/src/ProductBundle/Resources/config/api/workshop.yml" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Controller/Api/WorkshopController.php" />
         <option value="$PROJECT_DIR$/testing.php" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing/activity.yml" />
-        <option value="$PROJECT_DIR$/tests/PrestationBundle/Controller/ActivityControllerTest.php" />
         <option value="$PROJECT_DIR$/src/CoreBundle/Factory/FactoryBuilder.php" />
         <option value="$PROJECT_DIR$/src/CoreBundle/Factory/FactoryBuilderInterface.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/OrderBundle/Service/ReferenceBuilder.php" />
         <option value="$PROJECT_DIR$/src/OrderBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/tests/Framework/WebTestCase.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Factory/ActivityFactory.php" />
+        <option value="$PROJECT_DIR$/project.md" />
+        <option value="$PROJECT_DIR$/tests/PrestationBundle/Manager/ActivityManager.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Manager/ActivityManagerTest.php" />
+        <option value="$PROJECT_DIR$/src/CoreBundle/Manger/ManagerApplication.php" />
+        <option value="$PROJECT_DIR$/src/CoreBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing/prestation.yml" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Controller/PrestationController.php" />
+        <option value="$PROJECT_DIR$/tests/Framework/WebTestCase.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/tests/PrestationBundle/Factory/ActivityFactoryTest.php" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php" />
         <option value="$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php" />
-        <option value="$PROJECT_DIR$/tests/PrestationBundle/Factory/ActivityFactoryTest.php" />
-        <option value="$PROJECT_DIR$/src/PrestationBundle/Factory/ActivityFactory.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/BadPriceArgument.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Exception/BadPriceArgument.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/BadCapacityArgument.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/BadActivityArgument.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/WhatIsMyMotherFunckinName.php" />
+        <option value="$PROJECT_DIR$/tests/ProductBundle/Manager/WorkshopManager.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Manager/ActivityManager.php" />
+        <option value="$PROJECT_DIR$/src/CoreBundle/Manager/ManagerApplication.php" />
+        <option value="$PROJECT_DIR$/tests/PrestationBundle/Controller/ActivityControllerTest.php" />
+        <option value="$PROJECT_DIR$/tests/ProductBundle/Controller/Web/WorkshopControllerTest.php" />
+        <option value="$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php" />
+        <option value="$PROJECT_DIR$/tests/PrestationBundle/Manager/ActivityManagerTest.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/Activity/BadActivityArgument.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/Activity/BadCapacityArgument.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/Activity/WhatIsMyMotherFunckinName.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadActivityArgument.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadCapacityArgument.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/WhatIsMyMotherFunckinName.php" />
+        <option value="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadPriceArgument.php" />
+        <option value="$PROJECT_DIR$/src/ProductBundle/Exception/Workshop/BadCapacityArgument.php" />
         <option value="$PROJECT_DIR$/tests/ProductBundle/Factory/WorkshopFactoryTest.php" />
         <option value="$PROJECT_DIR$/src/ProductBundle/Factory/WorkshopFactory.php" />
-        <option value="$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php" />
-        <option value="$PROJECT_DIR$/project.md" />
       </list>
     </option>
   </component>
@@ -302,10 +307,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="48" />
-    <option name="y" value="-11" />
-    <option name="width" value="1319" />
-    <option name="height" value="780" />
+    <option name="x" value="49" />
+    <option name="y" value="-4" />
+    <option name="width" value="1317" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -326,6 +331,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -369,10 +375,6 @@
               <option name="myItemId" value="ProductBundle" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Factory" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -392,73 +394,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProductBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PrestationBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Factory" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PrestationBundle" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -515,26 +451,8 @@
               <option name="myItemId" value="Exception" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProductBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
+              <option name="myItemId" value="Workshop" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -553,52 +471,31 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PrestationBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PrestationBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Twig" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ProductBundle/Exception" />
+      <recent name="$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing" />
+      <recent name="$PROJECT_DIR$/tests/PrestationBundle" />
       <recent name="$PROJECT_DIR$/src/ProductBundle/Resources/config/api" />
       <recent name="$PROJECT_DIR$/src/ProductBundle/Resources/config" />
-      <recent name="$PROJECT_DIR$/src/PrestationBundle/Controller" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/ProductBundle/Controller/Web" />
-      <recent name="$PROJECT_DIR$/tests/ProductBundle/Controller/Web" />
-      <recent name="$PROJECT_DIR$/src/ProductBundle/Controller" />
-      <recent name="$PROJECT_DIR$/src/ProductBundle" />
+      <recent name="$PROJECT_DIR$/src/ProductBundle/Exception/Workshop" />
+      <recent name="$PROJECT_DIR$/src/PrestationBundle/Exception/Activity" />
+      <recent name="$PROJECT_DIR$/src/PrestationBundle/Exception" />
+      <recent name="$PROJECT_DIR$/src/ProductBundle/Exception/Activity" />
       <recent name="$PROJECT_DIR$/app/Resources/views/Prestation" />
     </key>
   </component>
@@ -697,22 +594,23 @@
       <workItem from="1516451134042" duration="18682000" />
       <workItem from="1516538635798" duration="26348000" />
       <workItem from="1516658620600" duration="5727000" />
-      <workItem from="1516694301419" duration="16557000" />
+      <workItem from="1516694301419" duration="28388000" />
+      <workItem from="1516734321195" duration="534000" />
+      <workItem from="1516735097938" duration="20000" />
+      <workItem from="1516735392952" duration="8073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68223000" />
+    <option name="totallyTimeSpent" value="88681000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="-11" width="1319" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="49" y="-4" width="1317" height="772" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25963807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27301338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -724,6 +622,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -738,80 +637,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="55" column="76" lean-forward="false" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var/data/data.sqlite">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Test/KernelTestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="2163" column="42" lean-forward="false" selection-start-line="2163" selection-start-column="23" selection-end-line="2163" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Factory/ActionFactory.php" />
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Action.php" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/Product/Workshop/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/Prestation/Action/new.html.twig" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/Prestation/Action/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Controller/ActionController.php" />
     <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/ActionControllerTest.php" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/Product/Workshop/new.html.twig">
@@ -842,13 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Controller/ActivityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -897,30 +715,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProductBundle/Exception/WhatIsMyMotherFunckinName.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CoreBundle/Factory/FactoryBuilderInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,7 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-436">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,10 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="e#120#181#0#PHP" expanded="false" />
-            <element signature="e#583#604#1#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -973,40 +764,203 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CoreBundle/Manager" />
+    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Prestation/Prestation/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing/prestation.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Controller/ActivityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-388">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/ActivityControllerTest.php">
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="10224">
+          <caret line="475" column="27" lean-forward="false" selection-start-line="475" selection-start-column="27" selection-end-line="475" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Framework/WebTestCase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="514">
+          <caret line="139" column="20" lean-forward="false" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="20" />
           <folding>
-            <element signature="e#820#1239#0#PHP" expanded="false" />
+            <element signature="e#117#154#0#PHP" expanded="false" />
+            <element signature="e#939#1358#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Prestation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="88" column="31" lean-forward="false" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Factory/ActivityFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Controller/PrestationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2507">
+          <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Entity/Activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="236" column="6" lean-forward="true" selection-start-line="236" selection-start-column="6" selection-end-line="236" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ProductBundle/Manager/WorkshopManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoreBundle/Manager/ManagerApplication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ProductBundle/Controller/Web/WorkshopControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Manager/ActivityManagerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Manager/ActivityManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/ActivityControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="e#134#179#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#53#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/WhatIsMyMotherFunckinName.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductBundle/Exception/Workshop/BadCapacityArgument.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadPriceArgument.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1014,75 +968,37 @@
     <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Factory/ActivityFactoryTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProductBundle/Entity/Workshop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="173" column="27" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Factory/ActivityFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/ProductBundle/Factory/WorkshopFactoryTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+        <state relative-caret-position="387">
+          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#1142#1704#0#PHP" expanded="false" />
+            <element signature="e#129#189#0#PHP" expanded="true" />
+            <element signature="e#596#1127#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrestationBundle/Exception/Activity/BadActivityArgument.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProductBundle/Factory/WorkshopFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state relative-caret-position="744">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
             <element signature="e#123#160#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ProductBundle/Controller/Web/WorkshopControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/PrestationBundle/Controller/PrestationControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding>
-            <element signature="e#53#92#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="72">
-            <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

@@ -48,9 +48,10 @@ class Workshop
     private $isAvailable;
 
     /**
-     * @ORM\OneToMany(targetEntity="PrestationBundle\Entity\Prestation", mappedBy="workshop", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="PrestationBundle\Entity\Activity", mappedBy="workshop", cascade={"persist"})
      */
-    private $prestation;
+    private $activities;
+
 
     /**
      * Workshop constructor.
@@ -63,16 +64,8 @@ class Workshop
         $this->name = $name;
         $this->activity = $activity;
         $this->setCapacity($capacity);
-
-        if ($isAvailable)
-        {
-            $this->isAvailable = true;
-        }
+        $this->isAvailable = $isAvailable;
     }
-
-
-
-
 
     /**
      * Set capacity
@@ -172,39 +165,55 @@ class Workshop
     public function getIsAvailable()
     {
         return $this->isAvailable;
-    }
-
-    /**
-     * Add prestation
-     *
-     * @param \PrestationBundle\Entity\Prestation $prestation
-     *
-     * @return Workshop
-     */
-    public function addPrestation(\PrestationBundle\Entity\Prestation $prestation)
-    {
-        $this->prestation[] = $prestation;
 
         return $this;
     }
 
     /**
-     * Remove prestation
+     * Set activities
      *
-     * @param \PrestationBundle\Entity\Prestation $prestation
+     * @param \PrestationBundle\Entity\Activity $activities
+     *
+     * @return Workshop
      */
-    public function removePrestation(\PrestationBundle\Entity\Prestation $prestation)
+    public function setActivities(\PrestationBundle\Entity\Activity $activities = null)
     {
-        $this->prestation->removeElement($prestation);
+        $this->activities = $activities;
+
+        return $this;
     }
 
     /**
-     * Get prestation
+     * Get activities
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \PrestationBundle\Entity\Activity
      */
-    public function getPrestation()
+    public function getActivities()
     {
-        return $this->prestation;
+        return $this->activities;
+    }
+
+    /**
+     * Add activity
+     *
+     * @param \PrestationBundle\Entity\Activity $activity
+     *
+     * @return Workshop
+     */
+    public function addActivity(\PrestationBundle\Entity\Activity $activity)
+    {
+        $this->activities[] = $activity;
+
+        return $this;
+    }
+
+    /**
+     * Remove activity
+     *
+     * @param \PrestationBundle\Entity\Activity $activity
+     */
+    public function removeActivity(\PrestationBundle\Entity\Activity $activity)
+    {
+        $this->activities->removeElement($activity);
     }
 }

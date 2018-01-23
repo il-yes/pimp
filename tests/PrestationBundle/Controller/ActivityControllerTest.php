@@ -9,13 +9,13 @@
 namespace PrestationBundle\Tests\Controller;
 
 use PrestationBundle\Factory\ActivityFactory;
-use Tests\Framework\WebTestCase;
 use PrestationBundle\Entity\activity;
+use PrestationBundle\Manager\ActivityManager;
+use Tests\Framework\WebTestCase;
 
 class ActivityControllerTest extends WebTestCase
 {
     /**
-     * - create a new esthetic activity
      * @test
      */
     public function createActivity()
@@ -28,10 +28,5 @@ class ActivityControllerTest extends WebTestCase
             ->seeText('Creation')
             ->seeText('Hello this is here to create a new acivity');
     }
-
-
-
-
-
 
 }

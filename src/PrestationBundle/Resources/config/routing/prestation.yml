@@ -1,0 +1,7 @@
+prestation_prestation_index:
+    path:     /
+    defaults: { _controller: PrestationBundle:Prestation:index }
+
+prestation_prestation_new:
+    path:     /new
+    defaults: { _controller: PrestationBundle:Prestation:new }

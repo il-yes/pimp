@@ -50,12 +50,9 @@ class Activity
     private $executionTime;
 
     /**
-     * @ORM\ManyToMany(targetEntity="ProductBundle\Entity\Workshop", cascade={"persist"})
-     * @ORM\JoinTable(name="activity_workshop",
-     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="workshop_id", referencedColumnName="id", nullable=true)})
+     * @ORM\ManyToOne(targetEntity="ProductBundle\Entity\Workshop", inversedBy="activity")
      */
-    private $workshops;
+    private $workshop;
 
     /**
      * @ORM\OneToMany(targetEntity="PrestationBundle\Entity\Prestation", mappedBy="activity", cascade={"persist"})
@@ -185,39 +182,6 @@ class Activity
         return $this->executionTime;
     }
 
-    /**
-     * Add workshop
-     *
-     * @param \ProductBundle\Entity\Workshop $workshop
-     *
-     * @return Activity
-     */
-    public function addWorkshop(\ProductBundle\Entity\Workshop $workshop)
-    {
-        $this->workshops[] = $workshop;
-
-        return $this;
-    }
-
-    /**
-     * Remove workshop
-     *
-     * @param \ProductBundle\Entity\Workshop $workshop
-     */
-    public function removeWorkshop(\ProductBundle\Entity\Workshop $workshop)
-    {
-        $this->workshops->removeElement($workshop);
-    }
-
-    /**
-     * Get workshops
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getWorkshops()
-    {
-        return $this->workshops;
-    }
 
     /**
      * Add prestation
@@ -252,4 +216,32 @@ class Activity
     {
         return $this->prestation;
     }
+
+
+    /**
+     * Get workshop
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getWorkshop()
+    {
+        $this->workshop;
+
+        return $this;
+    }
+
+    /**
+     * Set workshop
+     *
+     * @param \ProductBundle\Entity\Workshop $workshop
+     *
+     * @return Activity
+     */
+    public function setWorkshop(\ProductBundle\Entity\Workshop $workshop = null)
+    {
+        $this->workshop = $workshop;
+
+        return $this;
+    }
+
 }

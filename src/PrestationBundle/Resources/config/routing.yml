@@ -3,3 +3,7 @@ prestation_activity:
     resource: "@PrestationBundle/Resources/config/routing/activity.yml"
     prefix:   /prestations/activity
 
+# ******************************** PRESTATION *********************************
+prestation_prestation:
+    resource: "@PrestationBundle/Resources/config/routing/prestation.yml"
+    prefix:   /prestations/prestations

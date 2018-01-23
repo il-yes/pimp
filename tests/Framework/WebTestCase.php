@@ -9,6 +9,9 @@
 namespace Tests\Framework;
 
 
+use PrestationBundle\Entity\Activity;
+use PrestationBundle\Factory\ActivityFactory;
+use ProductBundle\Entity\Workshop;
 use Throwable;
 use Doctrine\ORM\Tools\SchemaTool;
 use PHPUnit\Framework\TestCase;
@@ -56,8 +59,6 @@ class WebTestCase extends BaseTestCase
         // Autre facon de gerer la bdd
         $this->em->beginTransaction();
         $this->em->getConnection()->setAutoCommit(false);
-
-
     }
 
     protected function visit($url)
@@ -82,12 +83,6 @@ class WebTestCase extends BaseTestCase
         return $this;
     }
 
-    public function saveEntity($entity)
-    {
-        $this->em->persist($entity);
-        $this->em->flush();
-    }
-
 
     protected function onNotSuccessfulTest(Throwable $t)
     {
@@ -109,4 +104,75 @@ class WebTestCase extends BaseTestCase
 
         $this->em->rollBack();
     }
+
+
+
+    // ----------------------------- ManagerApplication --------------------------
+    public function dataMigration($entities)
+    {
+        foreach ($entities as $entity)
+        {
+            $this->saveEntity($entity);
+        }
+    }
+
+    public function saveEntity($entity)
+    {
+        $this->em->persist($entity);
+        $this->em->flush();
+    }
+
+    // ------------------------- ActivityManager ------------------------------
+    public function createActivities($activitiesRequest)
+    {
+        $activityFactory = new ActivityFactory();
+        $activities = [];
+
+        foreach ($activitiesRequest as $metadata)
+        {
+            array_push($activities, $activityFactory->createFromSpecification($metadata['name'], $metadata['category'], $metadata['price']));
+        }
+        return $activities;
+    }
+
+
+
+    public function retrieveSavedActivitiesByName($nameActivities = [])
+    {
+        $activities = [];
+        foreach ($nameActivities as $name)
+        {
+            array_push($activities, $this->em->getRepository(Activity::class)->findOneBy(['name' => $name]));
+        }
+        return $activities[0];
+    }
+
+    public function findActivityByName($activity)
+    {
+        return $this->em->getRepository(Activity::class)->findBy(['name' =>$activity->getName()]);
+    }
+
+
+    // ------------------------- WorkshopManager ------------------------------
+    public function retrieveSavedWorkshopsByName($nameWorkshops = [])
+    {
+        $workshops = [];
+        foreach ($nameWorkshops as $name)
+        {
+            array_push($workshops, $this->em->getRepository(Workshop::class)->findOneBy(['name' => $name]));
+        }
+        return $workshops[0];
+    }
+
+    // ------------------------- WorkshopManager ------------------------------
+    public function retrieveSavedPrestationsByName($nameWorkshops = [])
+    {
+        $workshops = [];
+        foreach ($nameWorkshops as $name)
+        {
+            array_push($workshops, $this->em->getRepository(Workshop::class)->findOneBy(['name' => $name]));
+        }
+        return $workshops[0];
+    }
+
 }

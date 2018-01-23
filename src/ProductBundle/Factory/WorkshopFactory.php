@@ -10,16 +10,30 @@ namespace ProductBundle\Factory;
 
 
 use PrestationBundle\Entity\Activity;
+use PrestationBundle\Exception\Activity\BadActivityArgument;
+use PrestationBundle\Exception\Activity\WhatIsMyMotherFunckinName;
+use PrestationBundle\Exception\Workshop\BadCapacityArgument;
 use ProductBundle\Entity\Workshop;
-use ProductBundle\Exception\WhatIsMyMotherFunckinName;
 
 class WorkshopFactory
 {
     private function createWorkshop($name, $activity = null, $capacity, $isAvailable = false)
     {
-        if (!$this->canAddAWorshop($name, $activity, $capacity))
+        $checkPoint = $this->canAddAWorshop($name, $activity, $capacity);
+        if (!$checkPoint['result'])
         {
-            throw new WhatIsMyMotherFunckinName();
+            switch ($checkPoint['type'])
+            {
+                case 'error_name' :
+                    throw new WhatIsMyMotherFunckinName();
+                    break;
+
+                case 'error_capacity' :
+                    throw new BadCapacityArgument();
+
+                case  'error_activity' :
+                    throw new BadActivityArgument();
+            }
         }
         return new Workshop($name, $activity, $capacity, $isAvailable, $isAvailable);
     }
@@ -91,17 +105,29 @@ class WorkshopFactory
     {
         if ($name = '' || !is_string($name) )
         {
-            return false;
+            return [
+                'result' => false,
+                'type' => 'error_name'
+            ];
         }
         if ($activity != null && !$activity instanceof Activity)
         {
-            return false;
+            return [
+                'result' => false,
+                'type' => 'error_activity'
+            ];
         }
         if (!is_string($capacity))
         {
-            return false;
+            return [
+                'result' => false,
+                'type' => 'error_capacity'
+            ];
         }
 
-        return true;
+        return [
+            'result' => true,
+            'type' => 'success'
+        ];
     }
 }

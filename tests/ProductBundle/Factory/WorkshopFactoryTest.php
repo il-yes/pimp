@@ -8,10 +8,11 @@
 
 namespace ProductBundle\Tests\Factory;
 
-use PHPUnit\Framework\TestCase;
-use PrestationBundle\Entity\Activity;
+
+use PrestationBundle\Exception\Activity\BadActivityArgument;
+use PrestationBundle\Exception\Activity\WhatIsMyMotherFunckinName;
 use PrestationBundle\Factory\ActivityFactory;
-use ProductBundle\Exception\WhatIsMyMotherFunckinName;
+use PrestationBundle\Manager\ActivityManager;
 use ProductBundle\Factory\WorkshopFactory;
 use Tests\Framework\WebTestCase;
 
@@ -43,6 +44,7 @@ class WorkshopFactoryTest extends WebTestCase
         ]
     ];
 
+
     /**
      * - Création d'ateliers
      * @test
@@ -51,13 +53,15 @@ class WorkshopFactoryTest extends WebTestCase
     {
         $workshopFactory = new WorkshopFactory();
         $activityFactory = new ActivityFactory();
+        $activityManager = new ActivityManager();
 
         $activity = $activityFactory->createEsthetic('Painting', 35);
-        $this->saveEntity($activity);
+        $activityManager->saveEntity($activity);
 
-        $activity = $this->findActivity($activity)[0];
+        $activity = $activityManager->retrieveSavedActivitiesByName([$activity->getName()]);
         $workshop = $workshopFactory->createSmallWorkshop('venus', $activity, true);
-        $activity->addWorkshop($workshop);
+        /** var Activity */
+        $activity->setWorkshop($workshop);
 
         $this->assertEquals('venus', $workshop->getName());
         $this->assertEquals('small', $workshop->getCapacity());
@@ -77,9 +81,10 @@ class WorkshopFactoryTest extends WebTestCase
      */
     public function createWorkshopsFromSpecifications($name, $activity, $capacity, $isAvailable)
     {
-        $requestedActivities = $this->createActivities();
-        //$this->dataMigration($requestedActivities);
-        $activities = $this->retrieveSavedActivities([
+        $requestedActivities = $this->createActivities($this->activitiesRequest);
+        $this->dataMigration($requestedActivities);
+
+        $activities = $this->retrieveSavedActivitiesByName([
             $this->activitiesRequest['activityPainting']['name'],
             $this->activitiesRequest['activityRepair']['name'],
             $this->activitiesRequest['activityCustom']['name']
@@ -87,7 +92,7 @@ class WorkshopFactoryTest extends WebTestCase
 
         $factory = new WorkshopFactory();
         $workshop = $factory->createFromSpecification($name, $activity, $capacity, $isAvailable);
-var_dump($workshop);
+
         switch ($capacity)
         {
             case 'small' :
@@ -136,47 +141,15 @@ var_dump($workshop);
     public function canNotCreateAWorkshopWithoutAName()
     {
         $factory = new WorkshopFactory();
-        $this->expectException(WhatIsMyMotherFunckinName::class);
-        $workshop = $factory->createSmallWorkshop('', 'Painting', true);
+        $this->expectException(BadActivityArgument::class);
+        $workshop = $factory->createSmallWorkshop('test name', 'Painting', true);
 
         $this->expectException(WhatIsMyMotherFunckinName::class);
         $workshop = $factory->createSmallWorkshop(45, 'Painting', true);
 
     }
 
-    private function createActivities()
-    {
-        $activityFactory = new ActivityFactory();
-        $activities = [];
 
-        foreach ($this->activitiesRequest as $metadata)
-        {
-            array_push($activities, $activityFactory->createFromSpecification($metadata['name'], $metadata['category'], $metadata['price']));
-        }
-        return $activities;
-    }
 
-    private function dataMigration($entities)
-    {
-        foreach ($entities as $entity)
-        {
-            $this->saveEntity($entity);
-        }
-    }
-
-    private function retrieveSavedActivities($nameActivities = [])
-    {
-        $activities = [];
-        foreach ($nameActivities as $name)
-        {
-            array_push($activities, $this->em->getRepository(Activity::class)->findOneBy(['name' => $name]));
-        }
-        return $activities;
-    }
-
-    private function findActivity($activity)
-    {
-        return $this->em->getRepository(Activity::class)->findBy(['name' =>$activity->getName()]);
-    }
 
 }
