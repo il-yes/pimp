@@ -91,4 +91,30 @@ class Prestation
         return $this->activity;
     }
 
+    /**
+     * @return array
+     */
+    public function isActivityValid()
+    {
+        if (!$this->getActivity() instanceof Activity)
+        {
+            return [
+                'result' => false,
+                'type' => 'error_activity'
+            ];
+        }
+        if (!$this->activity->isAWorkshopAssignedToHim())
+        {
+            return [
+                'result' => false,
+                'type' => 'error_workshop'
+            ];
+        }
+
+        return [
+            'result' => true,
+            'type' => 'success'
+        ];
+    }
+
 }

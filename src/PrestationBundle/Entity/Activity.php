@@ -73,6 +73,7 @@ class Activity
         $this->name = $_name;
         $this->category = $_category;
         $this->price = $_price;
+        $this->workshop = null;
     }
 
 
@@ -242,6 +243,15 @@ class Activity
         $this->workshop = $workshop;
 
         return $this;
+    }
+
+    public function isAWorkshopAssignedToHim()
+    {
+        if ($this->workshop != null)
+        {
+            return true;
+        }
+        return false;
     }
 
 }
