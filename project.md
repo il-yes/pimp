@@ -73,3 +73,7 @@ Entity
 
 - video
 
+- vehicule :
+    - name
+    - type
+

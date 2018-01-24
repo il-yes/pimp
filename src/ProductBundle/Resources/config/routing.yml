@@ -3,15 +3,17 @@
 # .......................................................................... #
 
 # ******************************** WORKSHOP *********************************
-web_product_homepage:
+product_homepage:
     path:     /
     defaults: { _controller: ProductBundle:Default:index }
 
-web_product_workshop:
+product_workshop:
     resource: "@ProductBundle/Resources/config/web/workshop.yml"
     prefix:   /workshops
 
-
+product_vehicule_auto:
+    resource: "@ProductBundle/Resources/config/web/vehicule.yml"
+    prefix:   /vehicules-auto
 
 # .......................................................................... #
 # - API ***

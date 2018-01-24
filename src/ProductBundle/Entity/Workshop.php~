@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Workshop
  *
- * @ORM\Table(name="workshop")
+ * @ORM\Table(name="prod_workshop")
  * @ORM\Entity(repositoryClass="ProductBundle\Repository\WorkshopRepository")
  */
 class Workshop
@@ -64,16 +64,8 @@ class Workshop
         $this->name = $name;
         $this->activity = $activity;
         $this->setCapacity($capacity);
-
-        if ($isAvailable)
-        {
-            $this->isAvailable = true;
-        }
+        $this->isAvailable = $isAvailable;
     }
-
-
-
-
 
     /**
      * Set capacity
@@ -199,5 +191,29 @@ class Workshop
     public function getActivities()
     {
         return $this->activities;
+    }
+
+    /**
+     * Add activity
+     *
+     * @param \PrestationBundle\Entity\Activity $activity
+     *
+     * @return Workshop
+     */
+    public function addActivity(\PrestationBundle\Entity\Activity $activity)
+    {
+        $this->activities[] = $activity;
+
+        return $this;
+    }
+
+    /**
+     * Remove activity
+     *
+     * @param \PrestationBundle\Entity\Activity $activity
+     */
+    public function removeActivity(\PrestationBundle\Entity\Activity $activity)
+    {
+        $this->activities->removeElement($activity);
     }
 }

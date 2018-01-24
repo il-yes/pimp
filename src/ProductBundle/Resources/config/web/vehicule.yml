@@ -1,0 +1,3 @@
+product_vehicule_auto_new:
+    path:     /new
+    defaults: { _controller: ProductBundle:Web/Vehicule:new }

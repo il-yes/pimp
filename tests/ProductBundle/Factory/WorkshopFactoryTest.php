@@ -54,6 +54,7 @@ class WorkshopFactoryTest extends WebTestCase
         $workshopFactory = new WorkshopFactory();
         $activityFactory = new ActivityFactory();
         $activityManager = new ActivityManager();
+        // $activityManager = $this->createMock(ActivityManager::class);
 
         $activity = $activityFactory->createEsthetic('Painting', 35);
         $activityManager->saveEntity($activity);
