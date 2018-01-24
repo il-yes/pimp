@@ -73,7 +73,7 @@ class Activity
         $this->name = $_name;
         $this->category = $_category;
         $this->price = $_price;
-        $this->workshop = null;
+        $this->setWorkshop(null);
     }
 
 
