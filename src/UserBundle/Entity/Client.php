@@ -2,16 +2,15 @@
 
 namespace UserBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User
+ * Client
  *
- * @ORM\Table(name="user_user")
- * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
+ * @ORM\Table(name="user_client")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ClientRepository")
  */
-class User extends BaseUser
+class Client extends User
 {
     /**
      * @var int

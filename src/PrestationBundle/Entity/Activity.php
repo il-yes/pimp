@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Activity
  *
- * @ORM\Table(name="activity")
+ * @ORM\Table(name="pres_activity")
  * @ORM\Entity(repositoryClass="PrestationBundle\Repository\ActivityRepository")
  */
 class Activity

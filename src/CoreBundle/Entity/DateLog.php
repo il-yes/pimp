@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * DateLog
  *
- * @ORM\Table(name="date_log")
+ * @ORM\Table(name="core_date_log")
  * @ORM\Entity(repositoryClass="CoreBundle\Repository\DateLogRepository")
  */
 class DateLog
