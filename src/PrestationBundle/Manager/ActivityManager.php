@@ -16,17 +16,19 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ActivityManager extends ManagerApplication
 {
-    public function __construct()
+
+    public function __construct(ContainerInterface $container)
     {
-        parent::__construct();
+        $this->container = $container;
+        $this->em = $this->container->get('doctrine.orm.default_entity_manager');
     }
 
-    public function createActivities()
+    public function createActivities($activitiesRequest)
     {
         $activityFactory = new ActivityFactory();
         $activities = [];
 
-        foreach ($this->activitiesRequest as $metadata)
+        foreach ($activitiesRequest as $metadata)
         {
             array_push($activities, $activityFactory->createFromSpecification($metadata['name'], $metadata['category'], $metadata['price']));
         }

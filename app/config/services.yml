@@ -33,3 +33,17 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+
+    ProductBundle\:
+        resource: '../../src/ProductBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/ProductBundle/{Entity,Repository,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    ProductBundle\Controller\:
+        resource: '../../src/ProductBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']

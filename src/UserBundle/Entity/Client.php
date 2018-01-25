@@ -3,6 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Model\UserTrait;
 
 /**
  * Client
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Client extends User
 {
+    use UserTrait;
+
     /**
      * @var int
      *
@@ -25,6 +28,7 @@ class Client extends User
     {
         parent::__construct();
         // your own logic
+        $this->setType(parent::CLIENT);
     }
 
 

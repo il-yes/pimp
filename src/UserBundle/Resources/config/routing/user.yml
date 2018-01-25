@@ -1,0 +1,3 @@
+user_technician_new:
+    path:     /new
+    defaults: { _controller: UserBundle:User:new }

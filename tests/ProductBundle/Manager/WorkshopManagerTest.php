@@ -10,12 +10,10 @@ namespace Tests\ProductBundle\Manager;
 
 
 use CoreBundle\Manager\ManagerApplication;
+use ProductBundle\Entity\Workshop;
 
-class WorkshopManager extends ManagerApplication
+class WorkshopManagerTest extends ManagerApplication
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
+
 
 }

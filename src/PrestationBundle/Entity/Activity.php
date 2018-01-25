@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Activity
 {
+    const CATEGORY_MAINTENANCE = 'maintenance';
+    const CATEGORY_ESTHETIC = 'esthetic';
+    const CATEGORY_CUSTOM = 'customizing';
+
+
     /**
      * @var int
      *
@@ -240,7 +245,23 @@ class Activity
      */
     public function setWorkshop(\ProductBundle\Entity\Workshop $workshop = null)
     {
+        if (!$this->canSetAWorkshop())
+        {
+            return $this;
+        }
+        $this->updateWorkshop($workshop);
+
+        return $this;
+    }
+
+    private function updateWorkshop($workshop)
+    {
         $this->workshop = $workshop;
+    }
+
+    public function replaceWorkshop($workshop)
+    {
+        $this->updateWorkshop($workshop);
 
         return $this;
     }
@@ -252,6 +273,15 @@ class Activity
             return true;
         }
         return false;
+    }
+
+    public function canSetAWorkshop()
+    {
+        if ($this->isAWorkshopAssignedToHim())
+        {
+            return false;
+        }
+        return true;
     }
 
 }

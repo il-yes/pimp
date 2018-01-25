@@ -3,6 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Model\UserTrait;
 
 /**
  * Technician
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Technician extends User
 {
+    use UserTrait;
+
     /**
      * @var int
      *
@@ -25,6 +28,7 @@ class Technician extends User
     {
         parent::__construct();
         // your own logic
+        $this->setType(parent::TECHNICIEN);
     }
 
 

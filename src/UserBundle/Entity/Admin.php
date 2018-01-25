@@ -3,6 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Model\UserTrait;
 
 /**
  * Admin
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Admin extends User
 {
+    use UserTrait;
+
     /**
      * @var int
      *
@@ -26,7 +29,8 @@ class Admin extends User
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+
+        $this->setType(parent::ADMIN);
     }
 
 

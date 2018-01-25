@@ -10,6 +10,7 @@ namespace ProductBundle\Tests\Controller\Web;
 
 
 use PrestationBundle\Manager\ActivityManager;
+use ProductBundle\Factory\WorkshopFactory;
 use Tests\Framework\WebTestCase;
 
 class WorkshopControllerTest extends WebTestCase
@@ -19,9 +20,9 @@ class WorkshopControllerTest extends WebTestCase
      */
     public function new_small_workshop()
     {
-        /*
+
         $factory = new WorkshopFactory();
-        $workshop = $factory->createSmallWorkshop('venus', 'Painting', true);
+        $workshop = $factory->createSmallWorkshop('venus', null, true);
 
             $this->visit('/workshops/new')
                 ->assertResponseOk()
@@ -30,8 +31,8 @@ class WorkshopControllerTest extends WebTestCase
 
             $this->assertEquals('venus', $workshop->getName());
             $this->assertEquals('small', $workshop->getCapacity());
-            $this->assertEquals('Painting', $workshop->getActivity());
-        */
+            //$this->assertEquals('Painting', $workshop->getActivity());
+
 
 
 

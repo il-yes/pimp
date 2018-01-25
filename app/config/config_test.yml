@@ -1,6 +1,15 @@
 imports:
     - { resource: config_dev.yml }
 
+services:
+    _defaults:
+        public: true
+    test.ProductBundle\Manager\WorkshopManager: '@ProductBundle\Manager\WorkshopManager'
+
+doctrine:
+    dbal:
+        url: 'sqlite:///%kernel.project_dir%/var/data/test.sqlite'
+
 # Doctrine Configuration
 doctrine:
     dbal:

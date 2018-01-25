@@ -22,6 +22,7 @@ class ActivityController extends Controller
 
     public function newAction(Request $request)
     {
+
         /*
             $em = $this->getDoctrine()->getManager();
             $action = new Action($data['name'], $data['category'], $data['price']);

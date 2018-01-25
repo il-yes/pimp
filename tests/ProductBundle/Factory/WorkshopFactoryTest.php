@@ -25,6 +25,10 @@ class WorkshopFactoryTest extends WebTestCase
 
     const LARGE = 'large';
 
+    private $workshopFactory;
+
+    private $activityFactory;
+
     private $activitiesRequest = [
         // $key, $_name, $_category, $_price
         'activityPainting' => [
@@ -45,22 +49,23 @@ class WorkshopFactoryTest extends WebTestCase
     ];
 
 
+    public function setUp()
+    {
+        parent::setUp();
+        $this->workshopFactory = new WorkshopFactory();
+        $this->activityFactory = new ActivityFactory();
+    }
+
+
     /**
      * - Création d'ateliers
      * @test
      */
     public function createWorkshop()
     {
-        $workshopFactory = new WorkshopFactory();
-        $activityFactory = new ActivityFactory();
-        $activityManager = new ActivityManager();
-        // $activityManager = $this->createMock(ActivityManager::class);
+        $activity = $this->activityFactory->createEsthetic('Painting', 35);
+        $workshop = $this->workshopFactory->createSmallWorkshop('venus', $activity, true);
 
-        $activity = $activityFactory->createEsthetic('Painting', 35);
-        $activityManager->saveEntity($activity);
-
-        $activity = $activityManager->retrieveSavedActivitiesByName([$activity->getName()]);
-        $workshop = $workshopFactory->createSmallWorkshop('venus', $activity, true);
         /** var Activity */
         $activity->setWorkshop($workshop);
 
@@ -83,13 +88,6 @@ class WorkshopFactoryTest extends WebTestCase
     public function createWorkshopsFromSpecifications($name, $activity, $capacity, $isAvailable)
     {
         $requestedActivities = $this->createActivities($this->activitiesRequest);
-        $this->dataMigration($requestedActivities);
-
-        $activities = $this->retrieveSavedActivitiesByName([
-            $this->activitiesRequest['activityPainting']['name'],
-            $this->activitiesRequest['activityRepair']['name'],
-            $this->activitiesRequest['activityCustom']['name']
-        ]);
 
         $factory = new WorkshopFactory();
         $workshop = $factory->createFromSpecification($name, $activity, $capacity, $isAvailable);

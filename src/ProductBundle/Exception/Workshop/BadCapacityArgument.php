@@ -6,7 +6,7 @@
  * Time: 19:07
  */
 
-namespace PrestationBundle\Exception\Workshop;
+namespace ProductBundle\Exception\Workshop;
 
 
 class BadCapacityArgument extends \Exception

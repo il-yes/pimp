@@ -13,22 +13,11 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class ManagerApplication extends KernelTestCase
+class ManagerApplication
 {
-    /**
-     * @var ContainerInterface
-     */
     protected $container;
 
     protected $em;
-
-    public function __construct()
-    {
-        self::bootKernel();
-
-        $this->container = self::$kernel->getContainer();
-        $this->em = $this->container->get('doctrine.orm.default_entity_manager');
-    }
 
     public function dataMigration(array $entities)
     {
