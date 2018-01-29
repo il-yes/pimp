@@ -35,6 +35,10 @@ class WorkshopManager extends ManagerApplication
     }
 
 
+    /**
+     * TODO : a dynamiser via des arguments de array data
+     * @return array
+     */
     public function createVenusOregonMarsWorkshops()
     {
         $inUse = false;

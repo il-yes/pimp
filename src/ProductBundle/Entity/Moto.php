@@ -14,14 +14,6 @@ use ProductBundle\Model\Vehicule;
 class Moto extends Vehicule
 {
     const TYPE = 'motorcycle';
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
 
     /**
      * Moto constructor.
@@ -30,18 +22,6 @@ class Moto extends Vehicule
     {
         $this->setType(self::TYPE);
     }
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
 
     /**
      * @var string

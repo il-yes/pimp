@@ -5,6 +5,7 @@ services:
     _defaults:
         public: true
     test.ProductBundle\Manager\WorkshopManager: '@ProductBundle\Manager\WorkshopManager'
+    test.CoreBundle\Specifics\Resources: '@CoreBundle\Specifics\Resources'
 
 doctrine:
     dbal:

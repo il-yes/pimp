@@ -34,6 +34,16 @@ class Prestation
     private $activity;
 
     /**
+     * Prestation constructor.
+     * @param $activity
+     */
+    public function __construct(Activity $activity)
+    {
+        $this->activity = $activity;
+    }
+
+
+    /**
      * Get id
      *
      * @return integer

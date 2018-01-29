@@ -35,6 +35,20 @@ services:
     #         $someArgument: 'some_value'
 
 
+    CoreBundle\:
+        resource: '../../src/CoreBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/CoreBundle/{Entity,Repository,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    CoreBundle\Controller\:
+        resource: '../../src/CoreBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+
     ProductBundle\:
         resource: '../../src/ProductBundle/*'
         # you can exclude directories or files
@@ -47,3 +61,63 @@ services:
         resource: '../../src/ProductBundle/Controller'
         public: true
         tags: ['controller.service_arguments']
+
+
+    EventBundle\:
+        resource: '../../src/EventBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/EventBundle/{Entity,Repository,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    EventBundle\Controller\:
+        resource: '../../src/EventBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+
+    OrderBundle\:
+        resource: '../../src/OrderBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/OrderBundle/{Entity,Repository,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    OrderBundle\Controller\:
+        resource: '../../src/OrderBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+
+
+    PrestationBundle\:
+        resource: '../../src/PrestationBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/PrestationBundle/{Entity,Repository,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    PrestationBundle\Controller\:
+        resource: '../../src/PrestationBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+
+
+    UserBundle\:
+        resource: '../../src/UserBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/UserBundle/{Entity,Repository,Tests}'
+
+        # controllers are imported separately to make sure they're public
+        # and have a tag that allows actions to type-hint services
+    UserBundle\Controller\:
+        resource: '../../src/UserBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+

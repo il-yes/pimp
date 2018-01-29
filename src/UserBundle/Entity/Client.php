@@ -15,31 +15,51 @@ class Client extends User
 {
     use UserTrait;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-
     public function __construct()
     {
         parent::__construct();
         // your own logic
-        $this->setType(parent::CLIENT);
+        $this->setType(parent::TYPE_CLIENT);
+        $this->addRole("ROLE_CLIENT");
     }
 
 
     /**
-     * Get id
-     *
-     * @return int
+     * @ORM\OneToMany(targetEntity="EventBundle\Entity\Event", mappedBy="client", cascade={"persist"})
      */
-    public function getId()
+    private $events;
+
+    /**
+     * Add event
+     *
+     * @param \EventBundle\Entity\Event $event
+     *
+     * @return Client
+     */
+    public function addEvent(\EventBundle\Entity\Event $event)
     {
-        return $this->id;
+        $this->events[] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Remove event
+     *
+     * @param \EventBundle\Entity\Event $event
+     */
+    public function removeEvent(\EventBundle\Entity\Event $event)
+    {
+        $this->events->removeElement($event);
+    }
+
+    /**
+     * Get events
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvents()
+    {
+        return $this->events;
     }
 }
-

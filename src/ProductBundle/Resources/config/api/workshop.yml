@@ -1,4 +1,9 @@
 api_product_workshop_new:
-    path:     /
+    path:     /workshops
     defaults: { _controller: ProductBundle:Api/Workshop:new }
     methods: POST
+
+api_product_workshop_show:
+    path:     /workshops/{nickname}
+    defaults: { _controller: ProductBundle:Api/Workshop:show }
+    methods: GET

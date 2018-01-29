@@ -2,44 +2,38 @@
 
 namespace UserBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Model\StaffAbstract;
 use UserBundle\Model\UserTrait;
 
 /**
  * Technician
  *
- * @ORM\Table(name="user_technician")
- * @ORM\Entity(repositoryClass="UserBundle\Repository\TechnicianRepository")
  */
-class Technician extends User
+class Technician extends StaffAbstract
 {
     use UserTrait;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+    const HIERARCHIE_MANAGER = "manager";
+    const HIERARCHIE_MEMBER = "member";
 
-    public function __construct()
+    private $hierarchy;
+
+    /**
+     * @return mixed
+     */
+    public function getHierarchy()
     {
-        parent::__construct();
-        // your own logic
-        $this->setType(parent::TECHNICIEN);
+        return $this->hierarchy;
+    }
+
+    /**
+     * @param mixed $hierarchy
+     */
+    public function setHierarchy($hierarchy)
+    {
+        $this->hierarchy = $hierarchy;
     }
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 }
 

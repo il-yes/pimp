@@ -55,7 +55,7 @@ class Activity
     private $executionTime;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ProductBundle\Entity\Workshop", inversedBy="activity")
+     * @ORM\ManyToOne(targetEntity="ProductBundle\Entity\Workshop", inversedBy="activities", cascade={"persist"})
      */
     private $workshop;
 

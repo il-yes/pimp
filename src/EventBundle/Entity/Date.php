@@ -1,6 +1,6 @@
 <?php
 
-namespace CoreBundle\Entity;
+namespace EventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Date
  *
  * @ORM\Table(name="core_date")
- * @ORM\Entity(repositoryClass="CoreBundle\Repository\DateRepository")
+ * @ORM\Entity(repositoryClass="EventBundle\Repository\DateRepository")
  */
 class Date
 {

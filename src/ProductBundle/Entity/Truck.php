@@ -14,14 +14,7 @@ use ProductBundle\Model\Vehicule;
 class Truck extends Vehicule
 {
     const TYPE = 'poids_lourd';
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+
 
     /**
      * Truck constructor.
@@ -30,17 +23,6 @@ class Truck extends Vehicule
     public function __construct()
     {
         $this->setType(self::TYPE);
-    }
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**

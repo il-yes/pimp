@@ -150,5 +150,4 @@ class WorkshopFactoryTest extends WebTestCase
 
 
 
-
 }

@@ -22,10 +22,10 @@ class WorkshopManagerIntegrationTest extends KernelTestCase
     public function setUp()
     {
         self::bootKernel();
-        $this->truncateEntites();
+        $this->truncateEntities();
     }
 
-    private function truncateEntites()
+    private function truncateEntities()
     {
         $this->purger = new ORMPurger($this->getEntityManager());
         $this->purger->purge();

@@ -4,6 +4,7 @@ namespace UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Model\UserTrait;
 
 /**
  * User
@@ -11,9 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
-    const ADMIN = 'admin';
-    const CLIENT = 'customer';
-    const TECHNICIEN = 'technician';
+    const TYPE_ADMIN = 'admin';
+    const TYPE_CLIENT = 'customer';
+    const TYPE_DEVELOPER = 'developer';
+    const TYPE_TECHNICIEN_MANAGER = 'technician_manager';
+    const TYPE_TECHNICIEN_MEMBER = 'technician_member';
+    const TYPE_PARTNER_TRANSPORTER = "partner_transporter";
+
+    use UserTrait;
 
     /**
      * @var int

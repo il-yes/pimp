@@ -17,13 +17,16 @@ class UserControllerTest extends WebTestCase
     public function newUser()
     {
         $userFactory = new UserFactory();
-        $technician = $userFactory->createUser(User::TECHNICIEN);
-        $technician->setUsername(self::USERNAME_1);
+        $technicianMember = $userFactory->createUser(User::TYPE_TECHNICIEN_MEMBER);
+        $technicianMember->setUsername(self::USERNAME_1);
 
         $this->visit('/technicians/new')
             ->assertResponseOk();
 
-        $this->assertEquals(User::TECHNICIEN, $technician->getType());
-        $this->assertEquals(self::USERNAME_1, $technician->getUsername());
+        $this->assertEquals(User::TYPE_TECHNICIEN_MEMBER, $technicianMember->getType());
+        $this->assertEquals(self::USERNAME_1, $technicianMember->getUsername());
+        $this->assertContains("ROLE_WORKER", $technicianMember->getRoles());
+        self::assertTrue($technicianMember instanceof User);
+        var_dump($technicianMember);
     }
 }

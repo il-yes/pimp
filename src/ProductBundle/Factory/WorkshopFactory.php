@@ -12,29 +12,16 @@ namespace ProductBundle\Factory;
 use PrestationBundle\Entity\Activity;
 use PrestationBundle\Exception\Activity\BadActivityArgument;
 use PrestationBundle\Exception\Activity\WhatIsMyMotherFunckinName;
-use PrestationBundle\Exception\Workshop\BadCapacityArgument;
 use ProductBundle\Entity\Workshop;
+use ProductBundle\Exception\Workshop\BadCapacityArgument;
 
 class WorkshopFactory
 {
     private function createWorkshop($name, $activity = null, $capacity, $isAvailable = false)
     {
         $checkPoint = $this->canAddAWorshop($name, $activity, $capacity);
-        if (!$checkPoint['result'])
-        {
-            switch ($checkPoint['type'])
-            {
-                case 'error_name' :
-                    throw new WhatIsMyMotherFunckinName();
-                    break;
+        $this->checkArguments($checkPoint);
 
-                case 'error_capacity' :
-                    throw new BadCapacityArgument();
-
-                case  'error_activity' :
-                    throw new BadActivityArgument();
-            }
-        }
         return new Workshop($name, $activity, $capacity, $isAvailable, $isAvailable);
     }
 
@@ -59,7 +46,7 @@ class WorkshopFactory
      */
     public function createClassicWorkshop($name, $activity, $isAvailable = false)
     {
-        return new Workshop($name, $activity, Workshop::CLASSIC, $isAvailable);
+        return $this->createWorkshop($name, $activity, Workshop::CLASSIC, $isAvailable);
     }
 
     /**
@@ -71,7 +58,7 @@ class WorkshopFactory
      */
     public function createLargeWorkshop($name, $activity, $isAvailable = false)
     {
-        return new Workshop($name, $activity, Workshop::LARGE, $isAvailable);
+        return $this->createWorkshop($name, $activity, Workshop::LARGE, $isAvailable);
     }
 
 
@@ -129,5 +116,24 @@ class WorkshopFactory
             'result' => true,
             'type' => 'success'
         ];
+    }
+
+    private function checkArguments($checkPoint)
+    {
+        if (!$checkPoint['result'])
+        {
+            switch ($checkPoint['type'])
+            {
+                case 'error_name' :
+                    throw new WhatIsMyMotherFunckinName();
+                    break;
+
+                case 'error_capacity' :
+                    throw new BadCapacityArgument();
+
+                case  'error_activity' :
+                    throw new BadActivityArgument();
+            }
+        }
     }
 }

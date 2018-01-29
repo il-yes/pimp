@@ -22,4 +22,4 @@ product_vehicule_auto:
 # ******************************** WORKSHOP *********************************
 api_product_workshop:
     resource: "@ProductBundle/Resources/config/api/workshop.yml"
-    prefix:   /api/workshops
+    prefix:   /api

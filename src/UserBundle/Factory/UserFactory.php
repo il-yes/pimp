@@ -11,7 +11,11 @@ namespace UserBundle\Factory;
 
 use UserBundle\Entity\Admin;
 use UserBundle\Entity\Client;
+use UserBundle\Entity\Developer;
+use UserBundle\Entity\Manager;
+use UserBundle\Entity\Member;
 use UserBundle\Entity\Technician;
+use UserBundle\Entity\Transporter;
 use UserBundle\Entity\User;
 
 class UserFactory
@@ -25,29 +29,53 @@ class UserFactory
     {
         return new Admin();
     }
-    private function createTechnician()
-    {
-        return new Technician();
-    }
     private function createClient()
     {
         return new Client();
+    }
+    private function createTechnianMember()
+    {
+        return new Member();
+    }
+    private function createTechnicianManager()
+    {
+        return new Manager();
+    }
+    private function createDeveloper()
+    {
+        return new Developer();
+    }
+    private function createTransporter()
+    {
+        return new Transporter();
     }
 
     public function userDeterminator($type)
     {
         switch ($type)
         {
-            case User::ADMIN :
+            case User::TYPE_ADMIN :
                 return $this->createAdmin();
                 break;
 
-            case User::CLIENT :
+            case User::TYPE_CLIENT :
                 return $this->createClient();
                 break;
 
-            case User::TECHNICIEN :
-                return $this->createTechnician();
+            case User::TYPE_TECHNICIEN_MEMBER  :
+                return $this->createTechnianMember();
+                break;
+
+            case User::TYPE_TECHNICIEN_MANAGER  :
+                return $this->createTechnicianManager();
+                break;
+
+            case User::TYPE_DEVELOPER  :
+                return $this->createDeveloper();
+                break;
+
+            case User::TYPE_PARTNER_TRANSPORTER  :
+                return $this->createTransporter();
                 break;
         }
     }

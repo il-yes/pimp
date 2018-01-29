@@ -12,19 +12,23 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * This class represents a LabLog item, either a BlogPost or an Event.
- * It is abstract because we never have a LabLog entity, it's either an event or a blog post.
- * @ORMEntity
- * @ORMTable(name="prod_vehicule")
- * @ORMInheritanceType("JOINED")
- * @ORMDiscriminatorColumn(name="type", type="string")
- * @ORMDiscriminatorMap( {"moto" = "Moto", "auto" = "Auto", "truck", "Truck"} )
+ * Vehicule
+ *
  */
 abstract class Vehicule
 {
     const AUTO = 'automobile';
     const MOTO = 'motorcycle';
     const TRUCK = 'poids_lourd';
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
 
     /**
      * @var string
@@ -47,6 +51,16 @@ abstract class Vehicule
     private $state;
 
 
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * @return mixed

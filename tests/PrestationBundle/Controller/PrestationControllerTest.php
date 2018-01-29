@@ -13,7 +13,7 @@ use PrestationBundle\Checker\WorkshopPresenceChecker;
 class PrestationControllerTest extends WebTestCase
 {
     /**
-     * @test
+     *
      */
     public function createPrestation()
     {
@@ -42,6 +42,8 @@ class PrestationControllerTest extends WebTestCase
 
             $this->assertTrue($workshop->getIsAvailable());
     }
+
+
 
     public function canNotSetAnNonInstanceActivityOfActivity()
     {
