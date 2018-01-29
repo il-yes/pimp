@@ -11,6 +11,7 @@ namespace ProductBundle\Controller\Api;
 use ProductBundle\Entity\Workshop;
 use ProductBundle\Factory\WorkshopFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -41,8 +42,11 @@ class WorkshopController extends Controller
             'nickname' => $workshop->getName()
         ]);
 
-        $response = new Response('It worked. Believe me - I\'m an API', 201);
+        $data = $this->workshopSerializer($workshop);
+
+        $response = new JsonResponse($data, 201);
         $response->headers->set('Location', $location);
+
         return $response;
     }
 
@@ -61,14 +65,34 @@ class WorkshopController extends Controller
                 $nickname));
         }
 
-        $data = [
+        $data = $this->workshopSerializer($workshop);
+
+        $response = new JsonResponse($data );
+
+        return $response;
+    }
+
+    private function workshopSerializer(Workshop $workshop)
+    {
+        return [
             'id' => $workshop->getId(),
             'name' => $workshop->getName(),
             'capacity' => $workshop->getCapacity(),
             'available' => $workshop->getIsAvailable(),
             'activity' => $workshop->getActivities()
         ];
+    }
 
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $workshops = $em->getRepository(Workshop::class)->findAll();
+
+        $data = ['Workshops' => []];
+        foreach ($workshops as $workshop)
+        {
+            $data['Workshops'][] = $this->workshopSerializer($workshop);
+        }
 
         $response = new Response(json_encode($data), 200);
         $response->headers->set('Content-Type', 'application/json');

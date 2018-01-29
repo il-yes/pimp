@@ -7,3 +7,8 @@ api_product_workshop_show:
     path:     /workshops/{nickname}
     defaults: { _controller: ProductBundle:Api/Workshop:show }
     methods: GET
+
+api_product_workshop_list:
+    path:     /workshops
+    defaults: { _controller: ProductBundle:Api/Workshop:list }
+    methods: GET

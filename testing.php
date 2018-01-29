@@ -32,7 +32,6 @@ try {
     echo "\n\n";
     echo $body;
     echo "\n\n";
-
     $workshopUrl = $response->getHeader('Location')[0];
 
     // GET to fetch that workshop
@@ -41,14 +40,19 @@ try {
 
     $body = $response->getBody();
     $statusCode = $response->getStatusCode();
+
+
+
+    // GET to get workshops
+    $response = $client->get('/api/workshops');
+    $body = $response->getBody();
+    $statusCode = $response->getStatusCode();
+
     echo var_dump($response->getHeaders());
     echo $statusCode;
     echo "\n\n";
     echo $body;
     echo "\n\n";
-
-
-
 
 
 
