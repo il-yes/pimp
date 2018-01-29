@@ -18,7 +18,7 @@ class WorkshopControllerTest extends ApiTestCase
      */
     public function Post()
     {
-        $name = 'workshop'.rand(0, 999);
+        $name = 'workshop-founder';
         $data = array(
             'name' => $name,
             'activity' => null,
@@ -35,9 +35,10 @@ class WorkshopControllerTest extends ApiTestCase
             $body = $response->getBody();
 
         $this->assertEquals(201, $response->getStatusCode());
+        $this->assertEquals('/api/workshops/workshop-founder', $response->getHeader('Location')[0]);
         $this->assertTrue($response->hasHeader('Location'));
         $finishedData = json_decode($response->getBody(true), true);
-        $this->assertArrayHasKey('name', $finishedData);
+        $this->assertEquals('workshop-founder', $finishedData['name']);
 
         var_dump($finishedData);
     }
