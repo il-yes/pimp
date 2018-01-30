@@ -11,7 +11,7 @@ $client = new Client([
     'http_errors' => false
 ]);
 
-$name = 'workshop'.rand(0, 999);
+$name = 'hero'.rand(0, 999);
 $data = array(
     'name' => $name,
     'activity' => null,
@@ -28,23 +28,18 @@ try {
     ]);
     $body = $response->getBody();
     $statusCode = $response->getStatusCode();
+    /*
     echo $statusCode;
     echo "\n\n";
     echo $body;
     echo "\n\n";
+    */
     $workshopUrl = $response->getHeader('Location')[0];
 
     // GET to fetch that workshop
-    //$response = $client->get('/api/workshops/'. $name);   1ere solution
-    $response = $client->get($workshopUrl);              // 2eme solution
+    $response = $client->get('/api/workshops/38'); // 1ere solution
+    //$response = $client->get($workshopUrl);               // 2eme solution
 
-    $body = $response->getBody();
-    $statusCode = $response->getStatusCode();
-
-
-
-    // GET to get workshops
-    $response = $client->get('/api/workshops');
     $body = $response->getBody();
     $statusCode = $response->getStatusCode();
 
@@ -54,6 +49,19 @@ try {
     echo $body;
     echo "\n\n";
 
+
+
+    // GET to get workshops
+    $response = $client->get('/api/workshops');
+    $body = $response->getBody();
+    $statusCode = $response->getStatusCode();
+/*
+    echo var_dump($response->getHeaders());
+    echo $statusCode;
+    echo "\n\n";
+    echo $body;
+    echo "\n\n";
+*/
 
 
 // Implicitly cast the body to a string and echo it

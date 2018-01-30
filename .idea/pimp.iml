@@ -19,6 +19,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/orm" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fig/link-util" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/http" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/plugin-history" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
@@ -116,6 +121,11 @@
           <root url="file://$MODULE_DIR$/vendor/doctrine/orm" />
           <root url="file://$MODULE_DIR$/vendor/fig/link-util" />
           <root url="file://$MODULE_DIR$/vendor/friendsofsymfony/user-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/common" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/http" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/parser" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/plugin-history" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/stream" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
@@ -195,6 +205,11 @@
           <root url="file://$MODULE_DIR$/vendor/doctrine/orm" />
           <root url="file://$MODULE_DIR$/vendor/fig/link-util" />
           <root url="file://$MODULE_DIR$/vendor/friendsofsymfony/user-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/common" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/http" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/parser" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/plugin-history" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/stream" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />

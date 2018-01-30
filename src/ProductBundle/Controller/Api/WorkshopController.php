@@ -39,7 +39,7 @@ class WorkshopController extends Controller
         $em->flush();
 
         $location = $this->generateUrl('api_product_workshop_show', [
-            'nickname' => $workshop->getName()
+            'id' => $workshop->getId()
         ]);
 
         $data = $this->workshopSerializer($workshop);
@@ -51,25 +51,25 @@ class WorkshopController extends Controller
     }
 
 
-    public function showAction($nickname)
+    public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $workshop = $em->getRepository(Workshop::class)->findOneBy([
-            'name' => $nickname
-        ]);
+
+        $workshop = $em->getRepository(Workshop::class)->find($id);
 
         if (!$workshop)
         {
             throw $this->createNotFoundException(sprintf(
                 'No workshop found with nickname "%s"',
-                $nickname));
+                $id));
         }
 
         $data = $this->workshopSerializer($workshop);
 
-        $response = new JsonResponse($data );
+        $response = new JsonResponse($data, 200);
 
         return $response;
+
     }
 
     private function workshopSerializer(Workshop $workshop)
@@ -98,4 +98,6 @@ class WorkshopController extends Controller
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
+
+
 }
