@@ -26,6 +26,7 @@ class WorkshopController extends Controller
      */
     public function newAction(Request $request)
     {
+
         $data = json_decode($request->getContent(), true);
 
         $factory = new WorkshopFactory();
@@ -35,6 +36,10 @@ class WorkshopController extends Controller
             $data['capacity'],
             $data['isAvailable']
         );
+        /*
+        $form = $this->createForm(WorkshopType::class, $workshop);
+        $this->processForm($request, $form);
+        */
 
 
         $em = $this->getDoctrine()->getManager();
@@ -114,13 +119,18 @@ class WorkshopController extends Controller
                 $id));
         }
 
-        $data = json_decode($request->getContent(), true);
+
+        //$data = json_decode($request->getContent(), true);
 
         /** @var Workshop $workshop */
-        $workshop->setName($data['name'])
+       /* $workshop->setName($data['name'])
         ->addActivity($data['activity'])
         ->setCapacity($data['capacity'])
         ->setIsAvailable($data['isAvailable']);
+        */
+
+        $form = $this->createForm(WorkshopType::class, $workshop);
+        $this->processForm($request, $form);
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($workshop);
@@ -137,6 +147,9 @@ class WorkshopController extends Controller
     private function processForm(Request $request, FormInterface $form)
     {
         $data = json_decode($request->getContent(), true);
+
+        $clearMissing = $request->getMethod() != 'PATCH';
+        $form->submit($data, $clearMissing);
     }
 
 

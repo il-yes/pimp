@@ -57,7 +57,7 @@ try {
         'capacity' => \ProductBundle\Entity\Workshop::LARGE,
         'isAvailable' => true
     );
-    $response = $client->put('/api/workshops/'. 1, [
+    $response = $client->put('/api/workshops/'. 12, [
         'body' => json_encode($data)
     ]);
 

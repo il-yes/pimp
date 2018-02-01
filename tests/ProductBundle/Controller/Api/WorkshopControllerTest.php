@@ -124,11 +124,11 @@ class WorkshopControllerTest extends ApiTestCase
     }
 
     /**
-     *
+     * @test
      */
     public function PutWorkshop()
     {
-        $name = self::NAME_AFRICA;
+        $name = 'hero864';
         $data = array(
             'name' => $name,
             'activity' => null,
@@ -139,26 +139,26 @@ class WorkshopControllerTest extends ApiTestCase
 
 
         $data = array(
-            'name' => self::NAME_FOUNDER,
+            'name' => self::NAME_AFRICA,
             'activity' => null,
-            'capacity' => \ProductBundle\Entity\Workshop::CLASSIC,
+            'capacity' => \ProductBundle\Entity\Workshop::LARGE,
             'isAvailable' => true
         );
 
 
-        $response = $this->client->put('/api/workshops/' . $workshop->getId(), [
+        $response = $this->client->put('/api/workshops/' . 14, [
             'body' => json_encode($data)
         ]);
         //$this->visit('/api/workshops/'. $workshop->getName());
         $this->assertEquals(200, $response->getStatusCode());
 
         $finishedData = json_decode($response->getBody()->getContents(), true);
-        $this->assertEquals(Workshop::CLASSIC, $finishedData['capacity']);
+        $this->assertEquals(Workshop::LARGE, $finishedData['capacity']);
         var_dump( $finishedData);
     }
 
     /**
-     * @test
+     *
      */
     public function DeleteWorkshop()
     {
@@ -176,5 +176,36 @@ class WorkshopControllerTest extends ApiTestCase
             'body' => json_encode($data)
         ]);
         $this->assertEquals(204, $response->getStatusCode());
+    }
+
+    /**
+     *
+     */
+    public function PatchWorkshop()
+    {
+        $name = 'hero244';
+        $data = [
+            'name' => $name,
+            'activity' => null,
+            'capacity' => \ProductBundle\Entity\Workshop::SMALL,
+            'isAvailable' => true
+        ];
+        $workshop = $this->createWorkshop($data);
+
+
+        $data = [
+            'capacity' => \ProductBundle\Entity\Workshop::CLASSIC,
+        ];
+
+
+        $response = $this->client->patch('/api/workshops/' . 15, [
+            'body' => json_encode($data)
+        ]);
+        $this->assertEquals(200, $response->getStatusCode());
+
+        $finishedData = json_decode($response->getBody()->getContents(), true);
+        $this->assertEquals(Workshop::CLASSIC, $finishedData['capacity']);
+        $this->assertEquals($name, $finishedData['name']);
+        var_dump( $finishedData);
     }
 }

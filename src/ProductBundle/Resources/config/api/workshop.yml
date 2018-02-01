@@ -16,7 +16,7 @@ api_product_workshop_list:
 api_product_workshop_update:
     path:     /workshops/{id}
     defaults: { _controller: ProductBundle:Api/Workshop:update }
-    methods: PUT
+    methods: [PUT, PATCH]
 
 api_product_workshop_delete:
     path:     /workshops/{id}
