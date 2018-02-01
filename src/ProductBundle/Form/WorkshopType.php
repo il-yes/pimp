@@ -17,7 +17,7 @@ class WorkshopType extends AbstractType
         $builder
             ->add('name', null)
             ->add('capacity', null)
-            ->add('isAvailable', Boolean::class)
+            ->add('isAvailable', null)
         ;
     }/**
      * {@inheritdoc}

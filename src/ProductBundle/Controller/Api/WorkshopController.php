@@ -10,7 +10,9 @@ namespace ProductBundle\Controller\Api;
 
 use ProductBundle\Entity\Workshop;
 use ProductBundle\Factory\WorkshopFactory;
+use ProductBundle\Form\WorkshopType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,6 +35,7 @@ class WorkshopController extends Controller
             $data['capacity'],
             $data['isAvailable']
         );
+
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($workshop);
@@ -99,5 +102,55 @@ class WorkshopController extends Controller
         return $response;
     }
 
+    public function updateAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $workshop = $em->getRepository(Workshop::class)->find($id);
 
+        if (!$workshop)
+        {
+            throw $this->createNotFoundException(sprintf(
+                'No workshop found with nickname "%s"',
+                $id));
+        }
+
+        $data = json_decode($request->getContent(), true);
+
+        /** @var Workshop $workshop */
+        $workshop->setName($data['name'])
+        ->addActivity($data['activity'])
+        ->setCapacity($data['capacity'])
+        ->setIsAvailable($data['isAvailable']);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($workshop);
+        $em->flush();
+
+
+        $data = $this->workshopSerializer($workshop);
+
+        $response = new JsonResponse($data, 200);
+
+        return $response;
+    }
+
+    private function processForm(Request $request, FormInterface $form)
+    {
+        $data = json_decode($request->getContent(), true);
+    }
+
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $workshop = $em->getRepository(Workshop::class)->find($id);
+
+        if ($workshop)
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($workshop);
+            $em->flush();
+        }
+        return new Response(null, 204);
+    }
 }

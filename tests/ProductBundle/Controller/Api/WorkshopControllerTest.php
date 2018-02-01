@@ -84,7 +84,7 @@ class WorkshopControllerTest extends ApiTestCase
     }
 
     /**
-     * @test
+     *
      */
     public function GetWorkshop()
     {
@@ -110,7 +110,7 @@ class WorkshopControllerTest extends ApiTestCase
     }
 
     /**
-     *
+     * @test
      */
     public function GetWorkshopsCollection()
     {
@@ -123,4 +123,58 @@ class WorkshopControllerTest extends ApiTestCase
         var_dump($finishedData);
     }
 
+    /**
+     *
+     */
+    public function PutWorkshop()
+    {
+        $name = self::NAME_AFRICA;
+        $data = array(
+            'name' => $name,
+            'activity' => null,
+            'capacity' => \ProductBundle\Entity\Workshop::SMALL,
+            'isAvailable' => true
+        );
+        $workshop = $this->createWorkshop($data);
+
+
+        $data = array(
+            'name' => self::NAME_FOUNDER,
+            'activity' => null,
+            'capacity' => \ProductBundle\Entity\Workshop::CLASSIC,
+            'isAvailable' => true
+        );
+
+
+        $response = $this->client->put('/api/workshops/' . $workshop->getId(), [
+            'body' => json_encode($data)
+        ]);
+        //$this->visit('/api/workshops/'. $workshop->getName());
+        $this->assertEquals(200, $response->getStatusCode());
+
+        $finishedData = json_decode($response->getBody()->getContents(), true);
+        $this->assertEquals(Workshop::CLASSIC, $finishedData['capacity']);
+        var_dump( $finishedData);
+    }
+
+    /**
+     * @test
+     */
+    public function DeleteWorkshop()
+    {
+        $name = self::NAME_FOUNDER;
+        $data = array(
+            'name' => $name,
+            'activity' => null,
+            'capacity' => \ProductBundle\Entity\Workshop::SMALL,
+            'isAvailable' => true
+        );
+        $workshop = $this->createWorkshop($data);
+        var_dump($workshop);
+
+        $response = $this->client->delete('/api/workshops/' . $workshop->getId(), [
+            'body' => json_encode($data)
+        ]);
+        $this->assertEquals(204, $response->getStatusCode());
+    }
 }

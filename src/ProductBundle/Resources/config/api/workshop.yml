@@ -12,3 +12,13 @@ api_product_workshop_list:
     path:     /workshops
     defaults: { _controller: ProductBundle:Api/Workshop:list }
     methods: GET
+
+api_product_workshop_update:
+    path:     /workshops/{id}
+    defaults: { _controller: ProductBundle:Api/Workshop:update }
+    methods: PUT
+
+api_product_workshop_delete:
+    path:     /workshops/{id}
+    defaults: { _controller: ProductBundle:Api/Workshop:delete }
+    methods: DELETE

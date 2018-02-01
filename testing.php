@@ -37,16 +37,39 @@ try {
     $workshopUrl = $response->getHeader('Location')[0];
 
     // GET to fetch that workshop
-    $response = $client->get('/api/workshops/38'); // 1ere solution
+    $response = $client->get('/api/workshops/'. 1); // 1ere solution
     //$response = $client->get($workshopUrl);               // 2eme solution
 
     $body = $response->getBody();
     $statusCode = $response->getStatusCode();
+    $finishedData = json_decode($body, true);
+    /*
+    echo var_dump($response->getHeaders());
+    echo $statusCode;
+    echo "\n\n";
+    echo $body;
+    var_dump($finishedData) ;
+    echo "\n\n";
+    */
+    $data = array(
+        'name' => $name,
+        'activity' => null,
+        'capacity' => \ProductBundle\Entity\Workshop::LARGE,
+        'isAvailable' => true
+    );
+    $response = $client->put('/api/workshops/'. 1, [
+        'body' => json_encode($data)
+    ]);
+
+    $body = $response->getBody();
+    $statusCode = $response->getStatusCode();
+    $finishedData = json_decode($body, true);
 
     echo var_dump($response->getHeaders());
     echo $statusCode;
     echo "\n\n";
     echo $body;
+    var_dump($finishedData) ;
     echo "\n\n";
 
 

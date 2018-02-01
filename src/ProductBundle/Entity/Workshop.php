@@ -200,9 +200,12 @@ class Workshop
      *
      * @return Workshop
      */
-    public function addActivity(\PrestationBundle\Entity\Activity $activity)
+    public function addActivity($activity)
     {
-        $this->activities[] = $activity;
+        if ($activity != null && $activity instanceof \PrestationBundle\Entity\Activity)
+        {
+            $this->activities[] = $activity;
+        }
 
         return $this;
     }
